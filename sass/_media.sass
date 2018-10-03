@@ -1,0 +1,377 @@
+@import "vars"
+
+
+/*==========  Desktop First  ==========*/
+
+// ≥1200px
++media-breakpoint-down(lg)
+
+// ≥992px
++media-breakpoint-down(md)
+@media screen and (max-device-width: 992px)
+	.page
+		&-head
+			&-share
+				display: none
+			&-center
+				padding-right: 15px
+		&-next
+			display: none
+	.comment-form
+		&-bottom
+			flex-direction: column
+			margin-top: 0
+		&-input
+			margin: 5px 0
+	.form-submit
+		text-align: center
+		margin-top: 5px
+
+// ≥768px
++media-breakpoint-down(sm)
+@media screen and (max-device-width: 768px)
+	body
+		margin-top: 50px
+	// header
+	.header-menu-btn
+		display: block
+	.header
+		position: fixed
+		top: 0
+		z-index: 99999
+		&-logotype
+			padding: 0
+		&-menu.active
+			display: block
+		&-menu
+			display: none
+			padding: 10px 0
+			position: fixed
+			background-color: $dark
+			left: 0
+			top: 0
+			height: calc(100vh - 58px)
+			min-width: 280px
+			margin-top: 58px;
+			overflow-y: scroll;
+			>ul
+				display: block
+			&-parent
+				display: block
+				margin: 0
+				padding: 0
+				border-bottom: 2px solid lighten($dark, 10%)
+				&::after
+					content: none
+				&::before
+					content: '•'
+					display: block
+					color: $accent
+					margin-right: 16px
+					padding-left: 16px
+					position: absolute
+					top: 15px
+				&:hover 
+					ul
+						display: none
+				span
+					display: block
+					width: 19px
+					height: 19px
+					background-color: lighten($dark, 15%)
+					border-radius: 50% 
+					position: absolute
+					right: 15px
+					top: 17px
+				ul
+					position: relative
+					margin: 0
+					padding: 5px 0 0
+					overflow: hidden
+					min-width: 100%
+				a
+					padding: 15px 0px 15px 30px
+					display: block
+					margin-right: 50px
+					&:after
+						width: auto
+						margin: 0 0px
+	.plus1
+		height: 9px
+		width: 1px
+		background-color: #fff
+		position: absolute
+		left: 9px
+		top: 5px
+	.plus2
+		height: 1px
+		width: 9px
+		background-color: #fff
+		position: absolute
+		left: 5px
+		top: 9px
+	.header-search
+		order: 3
+	.header-logotype
+		order: 2
+	.header-menu-btn
+		order: 1
+	.slick-dots
+		left: 30px
+	.slick-next
+		right: 40px
+	.slick-prev
+		right: 72px
+	.slider-item-text
+		padding: 0 30px
+	.hot-news
+		padding: 10px 0
+		&-item
+			display: inline-block;
+			height: 250px
+			width: calc(50% - 5px)
+	// Popular news
+	.popular-item
+		width: calc(50% - 30px)
+		&:nth-child(3), &:nth-child(4)
+			.popular-item-head
+				width: 100%
+		&-head
+			height: 50px
+	.banner-block
+		height: 100%
+		padding: 20px
+		overflow: hidden
+	.archive
+		&-item
+			flex-direction: column
+			&:nth-child(6n+1), &:nth-child(6n+5)
+				.archive-item-wrap-text, .archive-item-wrap-link
+					display: none
+				.archive-item-left
+					height: 135px
+			&:nth-child(6n+5)
+				float: left
+	.page
+		&-head
+			margin-top: 80px
+	.latest-item-wrap
+		padding: 10px 30px 0
+	.last-comments-item
+		width: 100%
+		&-left
+			height: 275px
+	.rightbar-popular
+		&-item
+			& img
+				height: 58px
+		&-link
+			width: 100%
+	.footer
+		&-social-links
+			padding-bottom: 25px
+			padding-top: 0
+	.loadmore
+		margin: 15px 0 35px
+
+// ≥576px
++media-breakpoint-down(xs)
+@media screen and (max-device-width: 576px)
+	.btn_showmore
+		display: block
+	.section-head-right
+		display: none
+	.loadmore
+		margin-top: 0
+		&:before
+			content: none
+		&:after
+			content: none
+		& a
+			color: #ffffff
+			font-weight: normal
+			background-color: #42bbee
+			padding: 10px
+			display: block
+			text-align: center
+			border-radius: 3px
+	.section-head
+		margin-bottom: 0
+	.color_bg
+		background-color: #fff
+	.white_bg
+		padding: 20px 0 0
+		box-shadow: none
+	.slider
+		height: auto
+		&-item
+			&-img img
+				height: 300px
+			&-text
+				bottom: 100px
+				& a
+					font-size: 24px
+					line-height: 32px
+	.slick
+		&-dots
+			left: 30px!important
+			bottom: 30px!important
+		&-next
+			right: 30px!important
+		&-prev
+			right: 62px!important
+	.hot-news
+		padding: 0
+		margin-top: 10px
+		&-item
+			margin: 0
+			width: 100%
+	.popular-item
+		width: 100%
+		&:nth-child(3), &:nth-child(4)
+			width: 100%
+	.latest-item
+		flex-direction: column
+		margin: 15px 0 0 0
+		&-wrap
+			padding: 12px 10px 0 10px
+		&-img
+			width: 100%
+	.video-item
+		margin-bottom: 20px
+	.archive
+		&-item
+			width: calc(100% + 30px)
+			margin: 0 -15px
+			&-left
+				margin-left: 0
+	.gallery-wrap
+		margin: 15px 0
+	.gallery-item
+		&:nth-child(8n+1), &:nth-child(8n+2), &:nth-child(8n+3), &:nth-child(8n+4), &:nth-child(8n+5), &:nth-child(8n+6), &:nth-child(8n+7), &:nth-child(8n+8)
+			height: 100px
+			width: 50%
+			float: left
+	.footer-bottom
+		justify-content: center
+		padding-bottom: 18px
+		flex-direction: column-reverse
+	.page
+		&-more
+			flex-direction: column
+		&-content
+			&-author
+				margin: 3px 0
+				&::after, &::before
+					content: ''
+					padding: 0
+			&-articles
+				&::before
+					content: none
+	blockquote span
+		margin-top: 12px
+	.form-submit [type=submit]
+		width: 100%
+	.comment-body
+		margin-left: 0
+	.comments ol.children 
+		margin-left: 15px
+	footer
+		padding-top: 36px
+		h5
+			height: 24px
+			text-align: center
+	.footer-menu
+		margin-bottom: 30px
+		li
+			line-height: 50px
+			border-bottom: 1px solid lighten($dark, 15%)
+			a
+				display: block
+				padding: 0 30px 0 10px
+				position: relative
+				&:after
+					content: '\e809'
+					font-family: $fontello
+					position: absolute
+					right: 10px
+					top: 0
+	.search
+		&-wrap
+			padding: 20px 0
+			height: 84px
+		&-page 
+			h3
+				border: none
+			.search-form
+				background-color: #fff
+				button
+					background-color: #fff
+				input
+					border: none
+		&-form
+			background-color: #f8fcff
+			border-radius: 3px
+			border: #e3eef6 1px solid
+			padding: 0
+			& input
+				border: 0
+				height: 40px
+				padding: 0 12px
+				margin-right: 0
+				width: calc(100% - 80px)
+			& button
+				height: 24px
+				padding: 0px 15px
+				margin: 8px 0px
+				color: #ff4e00
+				background-color: #f8fcff
+				border: none
+				border-radius: 0
+				border-left: 1px solid #ff4e00
+			& button:hover
+				background-color: #f8fcff
+				color: $dark
+	.page
+		&-content
+			&-bottom
+				flex-direction: column
+				margin-bottom: 10px
+			&-author
+				margin: 5px 10px 0 0
+			&-crumb
+				width: 100%
+			&-date
+				margin-top: 5px
+		&-more
+			flex-direction: row
+			flex-wrap: wrap
+			width: 100%
+			border-bottom: 1px solid #f7f7f7
+			padding-bottom: 16px
+		&-bot-share
+			text-align: center
+			margin-top: 12px
+			& ul
+				padding-left: 0
+	.last-comments-item
+		flex-direction: column
+		padding: 15px 0 0 0
+		&-wrap
+			padding: 8px 10px 0
+			&-link
+				display: none
+
+/*==========  Mobile First  ==========*/
+
+// ≤576px
++media-breakpoint-up(sm)
+
+// ≤768px
++media-breakpoint-up(md)
+
+// ≤992px
++media-breakpoint-up(lg)
+
+// ≤1200px
++media-breakpoint-up(xl)

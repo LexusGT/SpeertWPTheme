@@ -1,0 +1,1345 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+::placeholder
+	color: #d0dce4
+
+::selection
+	background-color: $accent
+	color: #fff
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: $default-font
+	overflow-x: hidden
+	color: $text
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		font-size: 15px
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: #5bd85b
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+	&.img-width
+		width: 100%
+
+.text-center
+	text-align: center
+
+b, strong
+	font-weight: bold
+
+a:hover
+	text-decoration: none
+	color: $accent
+
+//fontello
+[class^="icon-"]:before, [class*=" icon-"]:before
+	font-family: $fontello
+	font-style: normal
+	font-weight: normal
+	speak: none
+	display: inline-block
+	text-decoration: inherit
+	width: 1em
+	margin-right: .2em
+	text-align: center
+	font-variant: normal
+	text-transform: none
+	margin-left: .2em
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+
+.icon-eye-1:before
+	content: '\e800'
+	margin-right: 5px
+.icon-heart:before 
+	content: '\e801'
+.icon-comment-1:before 
+	content: '\e802'
+	margin-right: 5px
+.icon-heart-1:before 
+	content: '\e803'
+.icon-phone:before 
+	content: '\e806'
+.icon-down-open:before 
+	content: '\e807'
+.icon-left-open:before 
+	content: '\e808'
+.icon-right-open:before 
+	content: '\e809'
+.icon-up-open:before 
+	content: '\e80a'
+.icon-down-open-mini:before 
+	content: '\e80b'
+.icon-left-open-mini:before 
+	content: '\e80c'
+.icon-right-open-mini:before 
+	content: '\e80d'
+.icon-up-open-mini:before 
+	content: '\e80e'
+.icon-user:before 
+	content: '\e80f'
+.icon-star-filled:before 
+	content: '\e810'
+.icon-twitter:before 
+	content: '\f099'
+.icon-facebook:before 
+	content: '\f09a'
+.icon-gplus:before 
+	content: '\f0d5'
+.icon-youtube-play:before 
+	content: '\f16a'
+.icon-instagram:before 
+	content: '\f16d'
+.icon-skype:before 
+	content: '\f17e'
+.icon-vkontakte:before 
+	content: '\f189'
+.icon-whatsapp:before 
+	content: '\f232'
+.icon-odnoklassniki:before 
+	content: '\f263'
+.icon-telegram:before 
+	content: '\f2c6'
+
+h1, h2, h3, h4, h5, h6
+	font-family: $mery-font
+	font-weight: 600
+	color: $dark
+
+.color_bg
+	background-color: $bg_color
+.padding_bg
+	padding-bottom: 30px
+.white_bg
+	background-color: #fff
+	border-radius: 0 0 4px 4px
+	box-shadow: 0px 1px 1px 0px rgba(16, 19, 28, 0.1)
+	padding: 40px
+.gutter
+	margin-top: 40px
+	margin-bottom: 40px
+.clear
+	clear: both
+body.no_scroll
+	overflow: hidden
+.btn_showmore
+	display: none
+	width: 100%
+	padding: 8px
+	margin: 0 15px
+	border-radius: 3px
+	color: white
+	text-align: center
+	background-color: $blue
+	&:hover
+		color: #fff
+		background-color: darken($blue, 10%)
+
+
+// Start Header
+.header
+	min-height: 58px
+	background-color: $dark
+	&-logotype
+		height: 28px
+		width: 144px
+		margin: 15px 0
+		overflow: hidden
+	&-menu
+		list-style: none
+		display: flex
+		padding: 0
+		margin: 0
+		font-size: 15px
+		z-index: 1
+		ul
+			display: flex
+			margin-bottom: 0
+			padding-left: 0
+		&-parent
+			margin-right: 16px
+			padding: 16px 0
+			display: flex
+			position: relative
+			&:hover
+				ul
+					display: block
+			&::after
+				content: '•'
+				color: $accent
+				margin-left: 16px
+			&:last-child
+				&::after
+					content: ''
+					color: $accent
+					margin-left: 0px
+			a
+				color: #fff
+				text-decoration: none
+				&::after
+					content: ''
+					display: block
+					width: 100%
+					height: 2px
+					background-color: $accent
+					transform: translateY(16px) scale(0)
+					transition: all 0.2s
+				&:hover
+					color: $accent
+					&::after
+						transform: translateY(16px) scale(1)
+			span
+				display: none
+				transition: .2s
+				&.active
+					transform: rotateZ(45deg)
+					background-color: $accent
+			ul
+				display: none
+				position: absolute
+				background-color: #fff
+				margin: 42px 0
+				padding: 5px 20px
+				box-shadow: 0px 0px 10px 0px rgba(15, 18, 29, 0.1)
+				min-width: 240px
+				&:hover
+					display: block
+		&-child
+			display: block
+			border-bottom: 2px solid #f7f7f7
+			&:last-child
+				border-bottom: 2px solid #fff
+			a
+				display: block
+				color: $dark
+				padding: 14px 0
+				white-space: nowrap
+			
+	&-search
+		width: 29px
+		height: 29px
+		cursor: pointer
+		background-image: url(../img/search_icon_default.svg)
+	&-menu-btn
+		width: 29px
+		height: 29px
+		background-image: url(../img/menu_icon_default.svg)
+		display: none
+.search
+	&-wrap
+		display: none
+		height: 90px
+		background-color: lighten($dark, 20%)
+		text-align: center
+		&.active
+			display: block
+	&-page
+		background-color: #fffaf4
+		padding: 20px
+		h3
+			font-size: 24px
+			font-family: $mery-font
+			font-weight: 600
+			color: #0f121d
+			padding: 14px
+			margin: 0!important 
+			border-bottom: 2px solid #f6ece1
+		.search-form input
+			background-color: #fff
+			border: #f6ece1 1px solid			
+	&-form
+		padding: 20px 0
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		input
+			width: calc(100% - 100px)
+			border: #e3eef6 1px solid
+			color: $dark
+			height: 46px
+			padding: 0 20px
+			background-color: #f8fcff
+			box-shadow: none
+			border-radius: 3px
+			margin-right: 10px
+			-webkit-appearance: none
+			&:hover, &:active
+				background-color: #fff
+		button
+			height: 46px
+			padding: 0 30px
+			color: #fff
+			background-color: $accent
+			border: none
+			border-radius: 3px
+			cursor: pointer
+			&:hover
+				background-color: darken($accent, 2%)
+	
+
+// End Header
+
+//Slider Start
+.slider
+	width: 100%
+	height: 480px
+	padding: 0px
+	background-color: $bg_color
+	overflow: hidden
+	&-item
+		display:block
+		width: 100%
+		height: 100%
+		position: relative
+		overflow: hidden
+		&-text
+			position: absolute
+			bottom: 60px
+			padding: 0 60px
+			a
+				font-family: $mery-font
+				font-weight: 600
+				font-size: 36px
+				line-height: 42px
+				display: block
+				color: #fff
+				text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5)
+		&-img
+			height: 100%
+			width: 100%
+			//position: relative
+			&::after
+				content: ""
+				display: block
+				background-image: linear-gradient(to bottom,rgba(51,67,99,0) 30%,rgba(51,67,99,.4) 100%)
+				position: absolute
+				left: 0
+				top: 0
+				right: 0
+				bottom: 0		
+	&-item-2
+		background-color: green
+	& .slick-prev
+		z-index: 99
+
+.hot-news
+	padding: 0 10px
+	&-item
+		margin-bottom: 10px
+		height: calc(50% - 5px)
+		background-color: $bg_color
+		position: relative
+		&-info
+			display: inline-block
+			background-color: #fff
+			font-size: 13px
+			text-transform: uppercase
+			padding: 0 4px
+			margin-top: 10px
+		&-img
+			height: 100%
+			width: 100%
+			background-size: cover
+			&::after
+				content: " "
+				display: block
+				background-image: linear-gradient(to bottom,rgba(51,67,99,0) 30%,rgba(51,67,99,.4) 100%)
+				position: absolute
+				width: 100%
+				height: 100%
+		&-wrap
+			position: absolute
+			padding: 28px
+			width: 100%
+			bottom: 0
+		&-head
+			display: block
+			font-family: $mery-font
+			font-weight: 600
+			font-size: 20px
+			line-height: 28px
+			text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5)
+			color: #fff
+			&:hover
+				color:#fff
+
+	a:hover
+		text-decoration: none
+//End Slider
+
+// Start News list
+.news-list
+	margin-top: 20px
+	h5
+		font-size: 20px
+		font-family: $mery-font
+		color: $dark
+		&:after
+			content: ' '
+			display: block
+			height: 2px
+			width: 42px
+			background-color: $accent
+			margin: 12px 0 17px
+	a
+		color: $text
+		font-size: 15px
+		line-height: 22px
+		&:hover
+			color: $accent
+			text-decoration: none
+	ul
+		margin: 0
+		padding: 0px
+		li
+			list-style: none
+			display: flex
+			margin-bottom: 10px
+	&-date
+		min-width: 42px
+		max-height: 18px
+		text-align: center
+		font-size: 11px
+		color: #9aa8ce
+		background-color: $bg_color
+		margin: 4px 10px 0 0
+// End News list
+
+// Section head
+
+.section-head
+	border-bottom: 2px solid #f7f7f7
+	padding-bottom: 6px
+	margin-bottom: 15px
+	h2
+		&::after
+			content: ''
+			display: block
+			width: 100%
+			height: 2px
+			background-color: $accent
+			transform: translateY(16px)
+			transition: all 0.2s
+	&-right
+		margin-right: 10px
+		a
+			font-size: 15px
+			&:after, &:before
+				content: '/'
+				padding: 0 8px
+			&:hover
+				text-decoration: none
+				color: $accent
+
+// Start popular
+.popular-item
+	width: calc(25% - 30px)
+	margin: 15px
+	&:nth-child(3), &:nth-child(4)
+		width: calc(50% - 30px)
+		.popular-item-head
+			width: 50%
+	&-img
+		width: 100%
+		height: 300px
+		background-size: cover
+		background-position: center center
+		background-color: $bg_color
+	&-more
+		font-size: 13px
+		color: $dark
+		&-separator
+			content: ' '
+			display: inline-block
+			width: 1px
+			height: 12px
+			margin: 0 7px 0 9px
+			background-color: $dark
+	&-head
+		font-family: $mery-font
+		font-weight: 600
+		font-size: 18px
+		line-height: 28px
+		color: $dark
+		height: 80px
+		overflow: hidden
+		margin: 10px 0px 8px
+		a
+			color: $dark
+			display: block
+			&:after
+				content: ' '
+				display: block
+				width: 20px
+				height: 1px
+				background: $dark
+				opacity: .3
+				margin: 14px 0
+			&:hover
+				text-decoration: none
+				color: $accent
+// End popular
+
+// Start latest
+.latest-item
+	display: flex
+	margin: 20px 0 0 0
+	&:last-child
+		margin-bottom: 20px
+	&-img
+		width: 270px
+		height: 210px
+		flex: 0 0 auto
+		background-size: cover
+		background-color: $bg_color
+	&-wrap
+		padding: 20px 30px 0
+		&-head
+			font-family: $mery-font
+			font-weight: 600
+			font-size: 18px
+			line-height: 28px
+			color: $dark
+			height: 54px
+			overflow: hidden
+			margin-bottom: 10px
+			a
+				color: $dark
+				display: block
+				&:after
+					content: ' '
+					display: block
+					width: 20px
+					height: 1px
+					background: $dark
+					opacity: .3
+					margin: 14px 0
+				&:hover
+					text-decoration: none
+					color: $accent
+		&-text
+			font-size: 15px
+			line-height: 22px
+			color: $text
+		&-more
+			font-size: 13px
+			color: $dark
+			margin-top: 16px
+			p
+				display: inline-block
+				text-transform: uppercase
+				margin-right: 15px
+				a
+					color: $dark
+					&:hover
+						color: $accent
+.banner-block
+	width: 100%
+	height: calc(100% - 40px)
+	margin-top: 20px
+	border: 2px solid #f7f7f7
+	display: flex
+	a
+		margin: auto
+// End Latest
+
+//Start Top Video
+.video
+	margin-top: 30px
+	&-item
+		&-block
+			display: block
+			margin-bottom: 14px
+		&-head
+			font-family: $mery-font
+			font-weight: 600
+			font-size: 18px
+			line-height: 28px
+		a
+			color: $dark
+			&:hover
+				color: $accent
+				text-decoration: none
+		&-more
+			display: flex
+			font-size: 13px
+			color: $dark
+			margin-top: 10px
+			&:before
+				content: ' '
+				display: block
+				width: 20px
+				height: 1px
+				background: $dark
+				opacity: .3
+				margin-right: 10px
+
+// End Top Video
+
+// StartLoad more
+.loadmore
+	font-size: 15px
+	line-height: 22px
+	color: $dark
+	display: block
+	margin: 15px 0
+	a
+		color: $dark
+		font-weight: bold
+		background-color: #fff
+		padding: 10px
+		&:hover
+			color: $accent
+	&:after
+		content: ' '
+		display: block
+		height: 2px
+		width: 100%
+		background-color: #f7f7f7
+		margin-top: -10px
+	&:before
+		content: url(../img/arrow_dark.png)
+		margin-top: 3px
+// End laad more
+
+// Start Archive
+.archive
+	display: block
+	height: 100%
+	&-item
+		width: 50%
+		overflow: hidden
+		display: flex
+		padding: 15px 0
+		float: left
+		&:nth-child(6n+1), &:nth-child(6n+5)
+			.archive-item-wrap-text, .archive-item-wrap-link
+				display: inherit
+			.archive-item-left
+				height: 300px
+		&:nth-child(6n+5)
+			float: right
+			
+		&-left
+			width: 100%
+			height: 135px
+			position: relative
+			margin-left: -15px
+			&-img
+				width: 100%
+				height: 100%
+				background-size: cover
+				background-color: $bg_color
+				&::after
+					content: " "
+					display: block
+					background-image: linear-gradient(to bottom,rgba(51,67,99,0) 30%,rgba(51,67,99,.4) 100%)
+					position: absolute
+					top: 0
+					bottom: 0
+					width: calc(100% - 30px)
+			&-more
+				position: absolute
+				bottom: 8px
+				display: flex
+				font-size: 13px
+				color: #fff
+				margin: 0 20px
+				&:before
+					content: ' '
+					display: block
+					width: 20px
+					height: 1px
+					background: #fff
+					margin-right: 10px
+				&-separator
+					content: ' '
+					display: inline-block
+					width: 1px
+					height: 12px
+					margin: 0 7px 0 9px
+					background-color: #fff
+		&-wrap
+			padding-top: 12px
+			&-date
+				font-size: 13px
+				text-transform: uppercase
+				color: $dark
+				a
+					color: $dark
+					&:hover
+						color: $accent
+						text-decoration: none
+			&-head
+				font-family: $mery-font
+				font-weight: 600
+				font-size: 18px
+				line-height: 28px
+				margin: 7px 0
+				a
+					color: $dark
+					&:hover
+						color: $accent
+						text-decoration: none
+			&-text
+				font-size: 15px
+				line-height: 22px
+				height: 110px
+				overflow: hidden
+				color: $text
+				display: none
+			&-link
+				font-size: 13px
+				margin-top: 15px
+				display: none
+				a
+					&:hover
+						text-decoration: none
+						color: $accent
+//End Archive
+
+// Start Last Comments
+.last-comments
+	display: block
+	height: 100%
+	&-header
+		display: flex
+		margin-bottom: 5px
+	&-avatar
+		img
+			height: 32px
+			width: 32px
+			border-radius: 50%
+	&-author
+		display: block
+		font-size: 13px
+		line-height: 1
+		color: $accent
+		font-weight: bold
+		font-style: normal
+		padding-top: 2px
+	&-meta
+		padding-left: 10px
+	&-time
+		display: block
+		font-size: 10px
+		color: $dark
+		margin-top: 2px
+	&-item
+		width: 50%
+		overflow: hidden
+		display: flex
+		padding: 15px 0
+		float: left
+		&-left
+			width: 100%
+			height: 300px
+			position: relative
+			&-img
+				width: 100%
+				height: 100%
+				background-size: cover
+				background-position: center
+				&::after
+					content: " "
+					display: block
+					background-image: linear-gradient(to bottom,rgba(51,67,99,0) 30%,rgba(51,67,99,.4) 100%)
+					position: absolute
+					top: 0
+					bottom: 0
+					width: calc(100% - 30px)
+			&-more
+				position: absolute
+				bottom: 8px
+				display: flex
+				font-size: 13px
+				color: #fff
+				margin: 0 20px
+				&:before
+					content: ' '
+					display: block
+					width: 20px
+					height: 1px
+					background: #fff
+					margin-right: 10px
+				&-separator
+					content: ' '
+					display: inline-block
+					width: 1px
+					height: 12px
+					margin: 0 7px 0 9px
+					background-color: #fff
+		&-wrap
+			padding-top: 5px
+			&-date
+				font-size: 13px
+				text-transform: uppercase
+				color: $dark
+				a
+					color: $dark
+					&:hover
+						color: $accent
+						text-decoration: none
+			&-head
+				font-family: $mery-font
+				font-weight: 600
+				font-size: 18px
+				line-height: 28px
+				margin: 7px 0
+				a
+					color: $dark
+					&:hover
+						color: $accent
+						text-decoration: none
+			&-text
+				font-size: 15px
+				line-height: 22px
+				height: 110px
+				overflow: hidden
+				color: $text
+				max-height: 120px
+				position: relative
+				&::after
+					content: ' '
+					display: block
+					position: absolute
+					bottom: 0
+					width: 100%
+					height: 60px
+					background-image: linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%)
+			&-link
+				font-size: 13px
+				margin-top: 15px
+				a
+					&:hover
+						text-decoration: none
+						color: $accent
+//End Last Comments
+
+// Start Gallery
+.gallery-item
+	border: 3px solid #fff
+	width: 25%
+	color: #fff
+	float: left
+	background-size: cover
+	background-color: $bg_color
+	&:nth-child(8n+1), &:nth-child(8n+4)
+		height: 150px
+	&:nth-child(8n+2)
+		float: right
+		height: 300px
+		width: 50%
+	&:nth-child(8n+3)
+		float: right
+		height: 300px
+	&:nth-child(8n+5)
+		height: 300px
+	&:nth-child(8n+6)
+		height: 300px
+		width: 50%
+	&:nth-child(8n+7), &:nth-child(8n+8)
+		height: 150px	
+	a
+		background-image: linear-gradient(to bottom,rgba(51,67,99,0) 30%,rgba(51,67,99,.4) 100%)
+		display: block
+		position: relative
+		color: #fff
+		font-size: 13px
+		width: 100%
+		height: 100%
+	&-more
+		display: block
+		position: absolute
+		bottom: 10px
+		left: 15px
+//End Gallery
+
+// Start Page
+.icon-share
+	display: block
+	width: 32px
+	height: 32px
+	background-color: $bg_color
+	border-radius: 50%
+	padding-top: 4px
+	font-size: 14px
+	&:hover
+		background-color: $blue
+		color: #fff
+.page
+	&-head
+		margin: 50px 0 25px
+		&-center
+			padding-right: 60px
+		&-share
+			text-align: center
+			ul
+				padding: 0
+				margin: 8px 0 0
+			li
+				list-style: none
+				margin: 5px auto
+				position: relative
+		h1
+			font-size: 36px
+			line-height: 48px
+			color: $dark
+			height: 100px
+			overflow: hidden
+			&:after
+				content: ''
+				display: block
+				width: 50px
+				height: 2px
+				background-color: $dark
+				margin: 25px 0
+	&-desc
+		color: $text
+		font-size: 15px
+		line-height: 22px
+		margin-bottom: 20px
+	&-more
+		display: flex
+		font-size: 13px
+		line-height: 18px
+		text-transform: uppercase
+		a
+			&:before
+				content: '\e808'
+				font-family: $fontello
+				padding-right: 6px
+	&-next
+		&-img
+			display: block
+			height: 90px
+			width: 100%
+			background-size: cover
+			margin-bottom: 12px
+		&-link
+			font-size: 14px
+			line-height: 21px
+			font-family: $mery-font
+			font-weight: 600
+			margin-bottom: 10px
+			a
+				color: $dark
+				&:hover
+					color: $accent
+		&-btn
+			font-size: 13px
+			line-height: 18px
+			text-transform: uppercase
+			a
+				color: $accent
+				&:hover
+					color: $blue
+	&-content
+		&-thumb
+			width: 100%
+			&-desc
+				font-size: 13px
+				color: lighten($dark, 70%)
+				margin: 15px 0
+				&::before
+					content: ''
+					display: inline-block
+					height: 1px
+					width: 20px
+					margin: 0 10px 4px 0
+					background-color: lighten($dark, 70%)
+		&-text
+			font-size: 15px
+			line-height: 24px
+			color: $text
+			h2
+				font-size: 28px
+				line-height: 36px
+				margin: 40px 0 25px
+				&.exempt
+					margin: 40px 0 8px 0
+			h3
+				font-size: 24px
+				line-height: 32px
+				margin: 30px 0 10px
+			ul
+				font-weight: bold
+				color: $dark
+				padding-left: 24px
+				margin-bottom: 22px
+				li
+					font-weight: normal
+					font-size: 14px
+					line-height: 20px
+					margin: 5px 0 5px 20px 
+					list-style: none
+					&::before
+						content: ''
+						display: inline-block
+						width: 8px
+						height: 8px
+						border-radius: 50%
+						border: 2px solid $accent
+						margin-left: -20px
+						margin-right: 12px
+			ol
+				font-weight: bold
+				color: $dark
+				padding-left: 24px
+				margin-bottom: 22px
+				li
+					font-weight: normal
+					font-size: 14px
+					line-height: 20px
+					margin: 5px 0 5px 20px 
+					list-style: none
+					counter-increment: step-counter
+					&::before
+						content: counter(step-counter)
+						color: $accent
+						font-weight: bold
+						margin-left: -20px
+						margin-right: 12px
+		&-bottom
+			display: flex
+			align-items: center
+			justify-content: space-between
+			margin-bottom: 1rem
+		&-author
+			&::after, &::before
+				content: '/'
+				padding: 0 6px
+		&-articles
+			&::before
+				content: '/'
+				padding: 0 6px
+	&-bot
+		&-share
+			text-align: right
+			ul
+				margin: 0
+				li
+					display: inline-block
+					margin: 5px
+					text-align: center
+					&::before
+						content: none
+.banner
+	display: flex
+	width: 100%
+	border: 2px solid #f7f7f7
+	padding: 30px 20px
+	a
+		margin: 0 auto
+	img
+		max-width: 100%
+
+
+
+.rightbar
+	margin-bottom: 40px
+	a
+		color: $dark
+		&:hover
+			color: $accent
+	h4
+		font-size: 22px
+		font-weight: 100
+		&::before
+			content: ''
+			display: inline-block
+			width: 35px
+			height: 1px
+			background-color: $accent
+			margin-right: 15px
+			margin-bottom: 6px
+	&-popular
+		margin: 30px 0
+		&-top
+			&-text
+				border-bottom: 1px solid #f7f7f7
+				padding: 14px 14px 14px 0 
+			&-img
+				width: 100%
+		&-link
+			display: block
+			font-family: $mery-font
+			font-weight: 600
+			font-size: 16px
+			line-height: 22px
+			padding-left: 14px
+			max-height: 66px
+			overflow: hidden
+		&-info
+			display: block
+			text-transform: uppercase
+			font-size: 12px
+			padding-left: 14px
+			padding-top: 5px
+		&-item
+			margin-top: 20px
+			display: flex
+			&-text
+				display: flex
+				padding: 6px 0
+				flex-wrap: wrap
+				align-content: space-between
+			
+
+
+	
+
+
+blockquote
+	font-size: 24px
+	line-height: 36px
+	color: $dark
+	margin: 30px 0
+	span
+		display: block
+		font-size: 15px
+		line-height: 24px
+		color: $text
+		&::before
+			content: ''
+			display: inline-block
+			background-color: $accent
+			width: 35px
+			height: 1px
+			margin-bottom: 4px
+			margin-right: 10px
+
+.wp-caption-text
+	font-size: 13px
+	color: lighten($dark, 70%)
+	margin: 15px 0
+	&::before
+		content: ''
+		display: inline-block
+		height: 1px
+		width: 20px
+		margin: 0 10px 4px 0
+		background-color: lighten($dark, 70%)
+figure
+	margin: 20px 0
+.alingleft
+	width: 50%
+	float: left
+	margin: 10px 30px 0 0
+
+
+
+// End Page
+
+// Start Comments
+.comments
+	background-color: #fffaf4
+	ol
+		list-style-type: none
+		padding: 0
+	ol.children
+		margin-left: 55px
+		& .comment-body
+			margin-left: 0px
+		& ol.children
+			//margin-left: 0px
+			.comment-avatar img
+				width: 28px
+				height: 28px
+			.comment-author
+				padding-top: 2px
+.comments
+	padding: 30px 0 40px
+	&-title
+		font-size: 28px
+		font-family: $mery-font
+		font-weight: 600
+		color: $dark
+		padding-bottom: 14px
+		border-bottom: 2px solid #f6ece1
+		margin-bottom: 30px
+		span
+			display: inline-block
+			&:after
+				content: ''
+				display: block
+				width: 100%
+				height: 2px
+				background-color: $accent
+				transform: translateY(16px)
+.comment
+	&-box
+		padding: 0 15px 25px
+	&-list
+		padding-left: 0 !important 
+		li
+			margin: 0  !important
+			&::before
+				content: none !important
+	&-header
+		display: flex
+	&-avatar
+		img
+			height: 40px
+			width: 40px
+			border-radius: 50%
+	&-author
+		display: block
+		font-size: 13px
+		line-height: 1
+		color: $accent
+		font-weight: bold
+		font-style: normal
+		padding-top: 6px
+	&-meta
+		padding-left: 15px
+	&-time
+		display: block
+		font-size: 10px
+		color: #d8c9b9
+		margin-top: 2px
+	&-body
+		margin-left: 55px
+	&-text
+		font-size: 13px
+		line-height: 21px
+		word-wrap: break-word
+		margin-top: 4px
+		p
+			margin-bottom: 0px
+	&-footer
+		font-size: 13px
+		line-height: 21px
+		color: $blue
+		margin-top: 6px
+		padding-bottom: 16px
+		border-bottom: 1px solid #f6ece1
+	&-reply-title
+		font-family: $mery-font
+		font-weight: bold
+		color: $dark
+		font-size: 18px
+		padding: 18px 30px 0px 30px
+		border: 1px solid #f6ece1
+		border-bottom: 0px
+		background-color: #fff
+		&::after
+			content: ''
+			display: block
+			width: 100%
+			height: 1px
+			background-color: #f6ece1
+			margin-top: 12px
+	&-form
+		&-comment
+			width: 100%
+			padding: 10px 30px
+			border: 1px solid #f6ece1
+			border-top: 1px solid #fff
+			rezize: none
+			-webkit-appearance: none
+			&:required:valid
+				border: 1px solid #f6ece1
+				border-top: 1px solid #fff
+		&-bottom
+			display: flex
+			justify-content: space-between
+			margin-top: 5px
+		&-input
+			font-size: 15px
+			height: 46px
+			border: 1px solid #f6ece1
+			padding: 0 20px
+			flex: 1 1 auto
+			margin-right: 20px
+			-webkit-appearance: none
+.form-submit [type=submit]
+	background-color: $accent
+	border: 0
+	color: #fff
+	height: 46px
+	border-radius: 3px
+	width: 220px
+// End Comments
+
+//Start footer
+footer
+	background-color: $dark
+	padding-top: 50px
+	color: $foo_text
+	font-size: 15px
+	h5
+		font-family: $mery-font
+		font-weight: 600
+		font-size: 15px
+		line-height: 22px
+		color: #fff
+		height: 36px
+	p
+		line-height: 22px
+	ul
+		margin: 0
+		padding: 0
+		li
+			list-style: none
+			padding-bottom: 10px
+			line-height: 20px
+			a
+				color: $foo_text
+				&:hover
+					color: #fff
+					text-decoration: none
+.footer-social-links
+	padding-top: 4px
+	li
+		display: inline-block
+		margin-right: 4px
+.footer-bottom
+	margin: 14px 0 0
+	font-size: 13px
+	border-top: 1px solid lighten($dark, 20%)
+	width: 100%
+	justify-content: space-between
+	&-copy
+		p
+			margin-bottom: 0
+		a
+			color: #fff
+			text-decoration: none
+//End footer
+
+
+// Delete
+.red 
+	background-color: red
+	display: block
+	height: 30px
+	&:nth-child(even)
+		background-color: #ddd
+.green
+	background-color: green
+	display: block
+	height: 30px
+	&:nth-child(even)
+		background-color: #ddd
+
+
+	
+
+
+
+@import "media" // Always at the end
