@@ -1,0 +1,31 @@
+[33mcommit 72f9cb5687e4b5f883651fd8fc739c1e864bfe11[m[33m ([m[1;36mHEAD[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m
+Author: Argen <argenturdugulov@gmail.com>
+Date:   Tue Oct 16 17:12:48 2018 +0500
+
+    Revert "Добавил папку uploads"
+    
+    This reverts commit a8b6dd59f85698071b2723685f525adea961f164.
+
+[33mcommit a8b6dd59f85698071b2723685f525adea961f164[m
+Author: Aleksey Petrenko <lexusgt@yandex.ru>
+Date:   Thu Oct 4 14:42:35 2018 +0300
+
+    Добавил папку uploads
+
+[33mcommit 1edf79c1bad67c3af35a471d99cbaa962a1b5c3a[m
+Author: Argen <argenturdugulov@gmail.com>
+Date:   Thu Oct 4 16:15:14 2018 +0500
+
+    Изменил версию темы в style.css
+
+[33mcommit 76f81a0978251b2b4ea78a0121a00a9d62ef62c1[m
+Author: Aleksey Petrenko <lexusgt@yandex.ru>
+Date:   Wed Oct 3 12:17:06 2018 +0300
+
+    Прикрепил бузу данных в папку db_wp
+
+[33mcommit b244c95dd817d4f1c77981538ac0d12638519f71[m
+Author: Aleksey Petrenko <lexusgt@yandex.ru>
+Date:   Wed Oct 3 11:58:00 2018 +0300
+
+    Первый вариант на локальном сервере

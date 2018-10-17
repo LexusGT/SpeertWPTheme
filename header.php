@@ -23,29 +23,11 @@
             <div class="row align-items-center justify-content-between">
                 <div class="col-md-auto header-logotype"><a href="<?php site_url(); ?>"><?php the_custom_logo(); ?></a></div>
                 <div class="header-menu">
-                    <ul>
-                        <li class="header-menu-parent"><a href="#">Features</a><span><div class="plus1"></div><div class="plus2"></div></span>
-                            <ul class="menu-child">
-                                <li class="header-menu-child"><a href="#">Пункт подменю 1</a></li>
-                                <li class="header-menu-child"><a href="#">Пункт подменю 2</a></li>
-                                <li class="header-menu-child"><a href="#">Пункт подменю 3</a></li>
-                                <li class="header-menu-child"><a href="#">Пункт подменю 4</a></li>
-                                <li class="header-menu-child"><a href="#">Пункт подменю 5</a></li>
-                            </ul>
-                        </li>
-                        <li class="header-menu-parent"><a href="#">About</a><span><div class="plus1"></div><div class="plus2"></div></span>
-                            <ul class="menu-child">
-                                <li class="header-menu-child"><a href="#">Пункт подменю 1</a></li>
-                                <li class="header-menu-child"><a href="#">Пункт подменю 2</a></li>
-                                <li class="header-menu-child"><a href="#">Пункт подменю 3</a></li>
-                                <li class="header-menu-child"><a href="#">Пункт подменю 4</a></li>
-                                <li class="header-menu-child"><a href="#">Пункт подменю 5</a></li>
-                            </ul>
-                        </li>
-                        <li class="header-menu-parent"><a href="#">Portfolio</a></li>
-                        <li class="header-menu-parent"><a href="#">Blog</a></li>
-                        <li class="header-menu-parent"><a href="#">Contact</a></li>
-                    </ul>
+                    <?php
+                    if ( has_nav_menu( 'header_menu' ) ) {
+                        wp_nav_menu( array('theme_location' => 'header_menu', 'menu_id' => 'header_menu') );
+                    }
+                    ?>
                 </div>
                 <div class="header-search"></div>
                 <div class="header-menu-btn"></div>

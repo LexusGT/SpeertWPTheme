@@ -30,7 +30,10 @@ function speert_setup() {
 	));
 
 	// register Menu
-	register_nav_menu( 'header_menu', 'Header_menu' );
+	register_nav_menus( array(
+		'header_menu' => esc_html__( 'Header menu', 'speert' ),
+		'footer_menu' => esc_html__( 'Footer menu', 'speert' ),
+	) );
 
 }
 add_action( 'after_setup_theme', 'speert_setup' );

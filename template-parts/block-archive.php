@@ -9,7 +9,7 @@
             <div class="archive-item">
                 <div class="col-lg-6 archive-item-left">
                     <a href="#">
-                        <div class="archive-item-left-img" style="background-image: url(img/preview/archive-1.jpg);"></div>
+                        <div class="archive-item-left-img" style="background-image: url(<?= get_bloginfo('template_url'); ?>/img/preview/archive-1.jpg);"></div>
                     </a>
                     <div class="archive-item-left-more align-items-center"><span class="icon-eye-1">28</span><span class="archive-item-left-more-separator"></span><span class="icon-comment-1">33</span></div>
                 </div>
@@ -26,7 +26,7 @@
             <div class="archive-item">
                 <div class="col-lg-6 archive-item-left">
                     <a href="#">
-                        <div class="archive-item-left-img" style="background-image: url(img/preview/archive-2.jpg);"></div>
+                        <div class="archive-item-left-img" style="background-image: url(<?= get_bloginfo('template_url'); ?>/img/preview/archive-2.jpg);"></div>
                     </a>
                     <div class="archive-item-left-more align-items-center"><span class="icon-eye-1">28</span><span class="archive-item-left-more-separator"></span><span class="icon-comment-1">33</span></div>
                 </div>
@@ -43,7 +43,7 @@
             <div class="archive-item">
                 <div class="col-lg-6 archive-item-left">
                     <a href="#">
-                        <div class="archive-item-left-img" style="background-image: url(img/preview/archive-3.jpg);"></div>
+                        <div class="archive-item-left-img" style="background-image: url(<?= get_bloginfo('template_url'); ?>/img/preview/archive-3.jpg);"></div>
                     </a>
                     <div class="archive-item-left-more align-items-center"><span class="icon-eye-1">28</span><span class="archive-item-left-more-separator"></span><span class="icon-comment-1">33</span></div>
                 </div>
@@ -60,7 +60,7 @@
             <div class="archive-item">
                 <div class="col-lg-6 archive-item-left">
                     <a href="#">
-                        <div class="archive-item-left-img" style="background-image: url(img/preview/archive-4.jpg);"></div>
+                        <div class="archive-item-left-img" style="background-image: url(<?= get_bloginfo('template_url'); ?>/img/preview/archive-4.jpg);"></div>
                     </a>
                     <div class="archive-item-left-more align-items-center"><span class="icon-eye-1">28</span><span class="archive-item-left-more-separator"></span><span class="icon-comment-1">33</span></div>
                 </div>
@@ -77,7 +77,7 @@
             <div class="archive-item">
                 <div class="col-lg-6 archive-item-left">
                     <a href="#">
-                        <div class="archive-item-left-img" style="background-image: url(img/preview/archive-5.jpg);"></div>
+                        <div class="archive-item-left-img" style="background-image: url(<?= get_bloginfo('template_url'); ?>/img/preview/archive-5.jpg);"></div>
                     </a>
                     <div class="archive-item-left-more align-items-center"><span class="icon-eye-1">28</span><span class="archive-item-left-more-separator"></span><span class="icon-comment-1">33</span></div>
                 </div>
@@ -94,7 +94,7 @@
             <div class="archive-item">
                 <div class="col-lg-6 archive-item-left">
                     <a href="#">
-                        <div class="archive-item-left-img" style="background-image: url(img/preview/archive-6.jpg);"></div>
+                        <div class="archive-item-left-img" style="background-image: url(<?= get_bloginfo('template_url'); ?>/img/preview/archive-6.jpg);"></div>
                     </a>
                     <div class="archive-item-left-more align-items-center"><span class="icon-eye-1">28</span><span class="archive-item-left-more-separator"></span><span class="icon-comment-1">33</span></div>
                 </div>
