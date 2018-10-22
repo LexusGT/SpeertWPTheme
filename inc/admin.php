@@ -27,3 +27,8 @@
  	}
  }
  add_action( 'init', 'speert_acf_options_page' );
+
+ /**
+ * Отменяем отключение custom-fields
+ */
+ add_filter('acf/settings/remove_wp_meta_box', '__return_false');

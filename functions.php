@@ -1,24 +1,19 @@
 <?php
-/**
- * ****************************************************************************
- *
- *   НЕ РЕДАКТИРУЙТЕ ЭТОТ ФАЙЛ
- *
- *   ВНИМАНИЕ!!!!!!!
- *
- *   НЕ РЕДАКТИРУЙТЕ ЭТОТ ФАЙЛ
- *   ПРИ ОБНОВЛЕНИИ ТЕМЫ - ВЫ ПОТЕРЯЕТЕ ВСЕ ВАШИ ИЗМЕНЕНИЯ
- *   ИСПОЛЬЗУЙТЕ ДОЧЕРНЮЮ ТЕМУ ИЛИ НАСТРОЙКИ ТЕМЫ В АДМИНКЕ
- *
- * ****************************************************************************
- *
- * @package Speert
- */
 
 /**
  * Admin
  */
 require get_template_directory() . '/inc/admin.php';
+
+/**
+ * Meta
+ */
+require get_template_directory() . '/inc/meta.php';
+
+/**
+ * Views
+ */
+require get_template_directory() . '/inc/views.php';
 
 // Setup theme
 function speert_setup() {
@@ -32,6 +27,16 @@ function speert_setup() {
 	));
 	add_theme_support( 'post-thumbnails' ); // подключение миниатюр
 	set_post_thumbnail_size (900,480);
+
+	/*
+     * Add new image size
+     */
+    $thumb_big_sizes  = apply_filters( 'speert_thumb_big_sizes', array( 747, 480, true ) );
+    // $thumb_wide_sizes = apply_filters( 'speert_thumb_wide_sizes', array( 330, 140, true ) );
+    if ( function_exists( 'add_image_size' ) ) {
+        add_image_size( 'thumb-big', $thumb_big_sizes[0], $thumb_big_sizes[1], $thumb_big_sizes[2]);
+        // add_image_size( 'thumb-wide', $thumb_wide_sizes[0], $thumb_wide_sizes[1], $thumb_wide_sizes[2] );
+    }
 
 	//Включает поддержку html5
 	add_theme_support( 'html5', array(
@@ -65,13 +70,13 @@ add_image_size( 's-s', 394, 210 );
 add_image_size( 'x-x', 288, 154 );
 
 // Удаляем создание стандартных миниатюр
-function wplift_remove_image_sizes( $sizes) {
+function speert_remove_image_sizes( $sizes) {
         unset( $sizes['thumbnail']);
         unset( $sizes['medium']);
         unset( $sizes['large']);
         return $sizes;
 }
-add_filter('intermediate_image_sizes_advanced', 'wplift_remove_image_sizes');
+add_filter('intermediate_image_sizes_advanced', 'speert_remove_image_sizes');
 
 
 // include Style & Script
@@ -83,6 +88,7 @@ function speert_name_scripts() {
 	wp_enqueue_style( 'slick-theme', get_stylesheet_directory_uri().'/libs/slick/slick-theme.css' );
 	wp_enqueue_script( 'script-min', get_template_directory_uri() . '/js/scripts.min.js', array(), false, true );
 	wp_enqueue_script( 'slick', get_template_directory_uri() . '/libs/slick/slick.min.js', array(), false, true );
+	wp_localize_script( 'script-min', 'speert_ajax', array('url' => admin_url('admin-ajax.php')) ); 
 }
 
 // Настройка отрывка поста: кол-во выводимых слов
@@ -95,47 +101,6 @@ add_filter('excerpt_length', 'new_excerpt_length');
 add_filter('excerpt_more', function($more) {
 	return ' ...';
 });
-
-/* Подсчет количества посещений страниц
----------------------------------------------------------- */
-add_action('wp_head', 'kama_postviews');
-function kama_postviews() {
-/* ------------ Настройки -------------- */
-$meta_key       = 'views';  // Ключ мета поля, куда будет записываться количество просмотров.
-$who_count      = 1;            // Чьи посещения считать? 0 - Всех. 1 - Только гостей. 2 - Только зарегистрированных пользователей.
-$exclude_bots   = 1;            // Исключить ботов, роботов, пауков и прочую нечесть :)? 0 - нет, пусть тоже считаются. 1 - да, исключить из подсчета.
-
-global $user_ID, $post;
-	if(is_singular()) {
-		$id = (int)$post->ID;
-		static $post_views = false;
-		if($post_views) return true; // чтобы 1 раз за поток
-		$post_views = (int)get_post_meta($id,$meta_key, true);
-		$should_count = false;
-		switch( (int)$who_count ) {
-			case 0: $should_count = true;
-				break;
-			case 1:
-				if( (int)$user_ID == 0 )
-					$should_count = true;
-				break;
-			case 2:
-				if( (int)$user_ID > 0 )
-					$should_count = true;
-				break;
-		}
-		if( (int)$exclude_bots==1 && $should_count ){
-			$useragent = $_SERVER['HTTP_USER_AGENT'];
-			$notbot = "Mozilla|Opera"; //Chrome|Safari|Firefox|Netscape - все равны Mozilla
-			$bot = "Bot/|robot|Slurp/|yahoo"; //Яндекс иногда как Mozilla представляется
-			if ( !preg_match("/$notbot/i", $useragent) || preg_match("!$bot!i", $useragent) )
-				$should_count = false;
-		}
-		if($should_count)
-			if( !update_post_meta($id, $meta_key, ($post_views+1)) ) add_post_meta($id, $meta_key, 1, true);
-	}
-	return true;
-}
 
 // Customizer Setup
 function speert_customize_register( $wp_customize ) {
