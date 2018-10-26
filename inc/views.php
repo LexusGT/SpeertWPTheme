@@ -107,6 +107,12 @@ function speert_get_type_sort_popular() {
 	return $meta_keys[$type];
 }
 
+function speert_the_views($post_id) {
+	$views = get_post_meta( $post_id, 'speert_views_all_time', true );
+	$views = empty($views) ? 0 : $views;
+	echo $views;
+}
+
 function speert_is_Bot($agent) {
 	$bots = array(
 		'rambler','googlebot','aport','yahoo','msnbot','turtle','mail.ru','omsktele',

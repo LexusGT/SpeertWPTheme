@@ -1,52 +1,34 @@
 <section class="container gutter">
-        <div class="row no-gutters align-items-center justify-content-between section-head">
-            <div class="section-head-left">
-                <h2>Popular news</h2></div>
+    <div class="row no-gutters align-items-center justify-content-between section-head">
+        <div class="section-head-left">
+            <h2>Popular news</h2></div>
             <div class="section-head-right"><a href="#">Show more</a></div>
         </div>
         <div class="row ">
-            <div class="popular-item">
-                <a href="#">
-                    <div class="popular-item-img" style="background-image: url(<?= get_bloginfo('template_url'); ?>/img/preview/popular-1.jpg);"></div>
-                </a>
-                <div class="popular-item-head"><a href="#">Williams wins first WTA Tour match after birth of child</a></div>
-                <div class="popular-item-more"><span class="icon-eye-1">28 </span><span class="popular-item-more-separator"></span><span class="icon-comment-1">33</span></div>
-            </div>
-            <div class="popular-item">
-                <a href="#">
-                    <div class="popular-item-img" style="background-image: url(<?= get_bloginfo('template_url'); ?>/img/preview/popular-2.jpg);"></div>
-                </a>
-                <div class="popular-item-head"><a href="#">I'm back and ready - Serena Williams</a></div>
-                <div class="popular-item-more"><span class="icon-eye-1">28 </span><span class="popular-item-more-separator"></span><span class="icon-comment-1">33</span></div>
-            </div>
-            <div class="popular-item">
-                <a href="#">
-                    <div class="popular-item-img" style="background-image: url(<?= get_bloginfo('template_url'); ?>/img/preview/popular-3.jpg);"></div>
-                </a>
-                <div class="popular-item-head"><a href="#">Kyrgios and Cilic out of Miami Open</a></div>
-                <div class="popular-item-more"><span class="icon-eye-1">28 </span><span class="popular-item-more-separator"></span><span class="icon-comment-1">33</span></div>
-            </div>
-            <div class="popular-item">
-                <a href="#">
-                    <div class="popular-item-img" style="background-image: url(<?= get_bloginfo('template_url'); ?>/img/preview/popular-4.jpg);"></div>
-                </a>
-                <div class="popular-item-head"><a href="#">Williams wins first WTA Tour match after birth of child</a></div>
-                <div class="popular-item-more"><span class="icon-eye-1">28 </span><span class="popular-item-more-separator"></span><span class="icon-comment-1">33</span></div>
-            </div>
-            <div class="popular-item">
-                <a href="#">
-                    <div class="popular-item-img" style="background-image: url(<?= get_bloginfo('template_url'); ?>/img/preview/popular-5.jpg);"></div>
-                </a>
-                <div class="popular-item-head"><a href="#">Kyrgios and Cilic out of Miami Open</a></div>
-                <div class="popular-item-more"><span class="icon-eye-1">28 </span><span class="popular-item-more-separator"></span><span class="icon-comment-1">33</span></div>
-            </div>
-            <div class="popular-item">
-                <a href="#">
-                    <div class="popular-item-img" style="background-image: url(<?= get_bloginfo('template_url'); ?>/img/preview/popular-6.jpg);"></div>
-                </a>
-                <div class="popular-item-head"><a href="#">I'm back and ready - Serena Williams</a></div>
-                <div class="popular-item-more"><span class="icon-eye-1">28 </span><span class="popular-item-more-separator"></span><span class="icon-comment-1">33</span></div>
-            </div>
+
+            <?php
+            $args = array( 'numberposts' => 6, 'meta_key' => speert_get_type_sort_popular(), 'orderby' => 'meta_value_num', 'order' => 'DESC' );
+            $myposts = get_posts( $args );
+            foreach( $myposts as $post ){
+                setup_postdata($post);
+                ?>
+                <div class="popular-item">
+                    <a href="<?php the_permalink();?>">
+                        <div class="popular-item-img" style="background-image: url(<?php echo get_the_post_thumbnail_url($post, 'm-m') ?>);"></div>
+                    </a>
+                    <div class="popular-item-head">
+                        <a href="<?php the_permalink();?>"><?php the_title(); ?></a>
+                    </div>
+                    <div class="popular-item-more">
+                        <span class="icon-eye-1"><?php speert_the_views($post->ID); ?> </span>
+                        <span class="popular-item-more-separator"></span>
+                        <span class="icon-comment-1"><?php comments_number( 0, 1, '%' ); ?></span>
+                    </div>
+                </div>
+                <?php
+            }
+            wp_reset_postdata();
+            ?>
             <a href="#" class="btn_showmore">Show more</a>
         </div>
     </section>
