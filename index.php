@@ -88,7 +88,7 @@
 <!-- End Main Block -->
 
 <!-- Popular Block -->
-<?php include('template-parts/popular-news.php') ?>
+<?php get_template_part('template-parts/popular-news') ?>
 <!-- End popular Block -->
 
 <section class="container gutter">
@@ -105,39 +105,21 @@
             $myposts = get_posts( $args );
             foreach( $myposts as $post ){
                 setup_postdata($post);
-                ?>
-                <div class="latest-item">
-                    <a href="<?php the_permalink();?>">
-                        <div class="latest-item-img" style="background-image: url(<?php echo get_the_post_thumbnail_url($post, 'm-m') ?>);"></div>
-                    </a>
-                    <div class="latest-item-wrap">
-                        <div class="latest-item-wrap-head">
-                            <a href="<?php the_permalink();?>"><?php the_title(); ?></a>
-                        </div>
-                        <div class="latest-item-wrap-text"><?php the_excerpt(); ?></div>
-                        <div class="latest-item-wrap-more">
-                            <p><?php echo speert_category( $post, '', '', true ); ?> / <?php echo get_the_date(); ?></p>
-                            <span class="icon-eye-1"><?php speert_the_views($post->ID); ?> </span>
-                            <span class="popular-item-more-separator"></span>
-                            <span class="icon-comment-1"><?php comments_number( 0, 1, '%' ); ?></span>
-                        </div>
-                    </div>
-                </div>
-                <?php
+                get_template_part('template-parts/archive-post-one');
             }
             wp_reset_postdata();
             ?>
         </div>
         <a href="#" class="btn_showmore">Show more</a>
         <div class="col-lg-4">
-            <div class="banner-block"><a href="#"><img src="/wp-content/themes/app/img/preview/banner-1.jpg" alt=""></a></div>
+            <?php speert_banner_right_sidebar(); ?>
         </div>
     </div>
 </section>
 
-<?php include('template-parts/top-video.php') ?>
-<?php include('template-parts/block-archive.php') ?>
-<?php include('template-parts/block-gallery.php') ?>
+<?php get_template_part('template-parts/top-video') ?>
+<?php get_template_part('template-parts/block-archive') ?>
+<?php get_template_part('template-parts/block-gallery') ?>
 
 <!-- Finish Gallery -->
 <?php get_footer(); ?>

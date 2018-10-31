@@ -29,10 +29,10 @@ if ( ! function_exists( 'speert_category' ) ) {
 		}
 
 		if ( $micro ) {
-            $micro_out = ' itemprop="articleSection"';
-        } else {
-            $micro_out = '';
-        }
+			$micro_out = ' itemprop="articleSection"';
+		} else {
+			$micro_out = '';
+		}
 
 		if ( $link ) {
 			return '<a href="' . get_category_link($cat_id) . '"' . $micro_out . $classes_out . '>' . get_cat_name($cat_id) . '</a>';
@@ -44,4 +44,16 @@ if ( ! function_exists( 'speert_category' ) ) {
 
 	}
 
+}
+
+function speert_get_count_posts_archive($taxonomy) {
+	$obj = get_queried_object();
+	$term = get_term( $obj->term_id, $taxonomy );
+	return $term->count;
+}
+
+function speert_the_count_posts_archive($taxonomy) {
+	$count = speert_get_count_posts_archive($taxonomy);
+	$text = $count > 1 ? 'Arcticles' : 'Arcticle';
+	echo $count . ' ' . $text;
 }

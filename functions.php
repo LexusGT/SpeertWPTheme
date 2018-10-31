@@ -15,6 +15,16 @@ require get_template_directory() . '/inc/meta.php';
  */
 require get_template_directory() . '/inc/views.php';
 
+/**
+ * Post type
+ */
+require get_template_directory() . '/inc/post-type.php';
+
+/**
+ * Ad
+ */
+require get_template_directory() . '/inc/ad.php';
+
 // Setup theme
 function speert_setup() {
 	load_theme_textdomain( 'lng_speert' ); // localization
@@ -31,12 +41,12 @@ function speert_setup() {
 	/*
      * Add new image size
      */
-    $thumb_big_sizes  = apply_filters( 'speert_thumb_big_sizes', array( 747, 480, true ) );
+	$thumb_big_sizes  = apply_filters( 'speert_thumb_big_sizes', array( 747, 480, true ) );
     // $thumb_wide_sizes = apply_filters( 'speert_thumb_wide_sizes', array( 330, 140, true ) );
-    if ( function_exists( 'add_image_size' ) ) {
-        add_image_size( 'thumb-big', $thumb_big_sizes[0], $thumb_big_sizes[1], $thumb_big_sizes[2]);
+	if ( function_exists( 'add_image_size' ) ) {
+		add_image_size( 'thumb-big', $thumb_big_sizes[0], $thumb_big_sizes[1], $thumb_big_sizes[2]);
         // add_image_size( 'thumb-wide', $thumb_wide_sizes[0], $thumb_wide_sizes[1], $thumb_wide_sizes[2] );
-    }
+	}
 
 	//Включает поддержку html5
 	add_theme_support( 'html5', array(
@@ -57,12 +67,42 @@ function speert_setup() {
 
 	// register Menu
 	register_nav_menus( array(
-		'header_menu' => esc_html__( 'Header menu', 'speert' ),
-		'footer_menu' => esc_html__( 'Footer menu', 'speert' ),
+		'header_menu' 		 => esc_html__( 'Header menu', 'speert' ),
+		'footer_quick_links' => esc_html__( 'Quick Links', 'speert' ),
+		'footer_information' => esc_html__( 'Information', 'speert' ),
 	) );
 
 }
 add_action( 'after_setup_theme', 'speert_setup' );
+
+// Функция вывода меню, для подвала
+function speert_list_menu($menu_name, $list_name) {
+	$locations = get_nav_menu_locations();
+
+	if( $locations && isset($locations[ $menu_name ]) ) {
+		$menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
+
+		$menu_items = wp_get_nav_menu_items( $menu );
+
+	// создаем список
+		$menu_list = '<ul class="footer-menu menu-' . $menu_name . '">';
+
+		foreach ( (array) $menu_items as $key => $menu_item ){
+			$menu_list .= '<li><a href="' . $menu_item->url . '">' . $menu_item->title . '</a></li>';
+		}
+
+		$menu_list .= '</ul>';
+
+		if ( !empty($menu_list) ) {
+
+			$block = '<div class="col-xs-6 col-lg-2 col-md-3">';
+			$block .= '<h5>' . $list_name . '</h5>' . $menu_list . '</div>';
+			echo $block;
+
+		}
+
+	}
+}
 
 // Регистрируем новый размер миниатюр
 add_image_size( 'm-m', 580, 300, true );
@@ -71,10 +111,10 @@ add_image_size( 'x-x', 288, 154 );
 
 // Удаляем создание стандартных миниатюр
 function speert_remove_image_sizes( $sizes) {
-        unset( $sizes['thumbnail']);
-        unset( $sizes['medium']);
-        unset( $sizes['large']);
-        return $sizes;
+	unset( $sizes['thumbnail']);
+	unset( $sizes['medium']);
+	unset( $sizes['large']);
+	return $sizes;
 }
 add_filter('intermediate_image_sizes_advanced', 'speert_remove_image_sizes');
 
@@ -105,19 +145,19 @@ add_filter('excerpt_more', function($more) {
 // Customizer Setup
 function speert_customize_register( $wp_customize ) {
    //All our sections, settings, and controls will be added here
-   $wp_customize->add_setting( 'footer_copyright' , array(
-    'default'   => __('© 2018 Speert theme. All rights reserved.', 'speert'),
-    'transport' => 'refresh',
+	$wp_customize->add_setting( 'footer_copyright' , array(
+		'default'   => __('© 2018 Speert theme. All rights reserved.', 'speert'),
+		'transport' => 'refresh',
 	));
 
 	$wp_customize->add_setting( 'footer_about' , array(
-    'default'   => __('Add text to the theme settings', 'speert'),
-    'transport' => 'refresh',
+		'default'   => __('Add text to the theme settings', 'speert'),
+		'transport' => 'refresh',
 	));
 
 	$wp_customize->add_section( 'footer_section' , array(
-    'title'      => __( 'Footer setting', 'speert' ),
-    'priority'   => 40,
+		'title'      => __( 'Footer setting', 'speert' ),
+		'priority'   => 40,
 	));
 
 	$wp_customize->add_control(
@@ -128,9 +168,9 @@ function speert_customize_register( $wp_customize ) {
 			'settings' => 'footer_copyright', //id настройки
 			'type'     => 'text',
 		)
-		);
+	);
 
-		$wp_customize->add_control(
+	$wp_customize->add_control(
 		'footer_about', 
 		array(
 			'label'    => __( 'Footer about text', 'speert' ),
@@ -138,9 +178,14 @@ function speert_customize_register( $wp_customize ) {
 			'settings' => 'footer_about', //id настройки
 			'type'     => 'textarea',
 		)
-		);
+	);
 
 }
 add_action( 'customize_register', 'speert_customize_register' );
+
+## Удаляет "Рубрика: ", "Метка: " и т.д. из заголовка архива
+add_filter( 'get_the_archive_title', function( $title ){
+	return preg_replace('~^[^:]+: ~', '', $title );
+});
 
 ?>

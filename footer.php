@@ -21,33 +21,21 @@
                 <div class="col-xs-6 col-lg-2 col-md-3">
                     <h5>Categories</h5>
                     <ul class="footer-menu">
-                        <li><a href="#">Football</a></li>
-                        <li><a href="#">Formula 1</a></li>
-                        <li><a href="#">Tennis</a></li>
-                        <li><a href="#">Atletics</a></li>
-                        <li><a href="#">Basketball</a></li>
+                        <?php
+                        $categories = get_categories();
+                        foreach ($categories as $category) {
+                            if ( $category->parent > 0 )
+                                continue;
+
+                            echo '<li><a href="' . get_category_link( $category->term_id ) . '">' . $category->name . '</a></li>';
+                        }
+                        ?>
                     </ul>
                 </div>
-                <div class="col-xs-6 col-lg-2 col-md-3">
-                    <h5>Quick Links</h5>
-                    <ul class="footer-menu">
-                        <li><a href="#">Gallery</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">News</a></li>
-                        <li><a href="#">Updates</a></li>
-                        <li><a href="#">Contacts</a></li>
-                    </ul>
-                </div>
-                <div class="col-xs-6 col-lg-2 col-md-3">
-                    <h5>Information</h5>
-                    <ul class="footer-menu">
-                        <li><a href="#">Features</a></li>
-                        <li><a href="#">Benefits</a></li>
-                        <li><a href="#">Our Team</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Portfolio</a></li>
-                    </ul>
-                </div>
+
+                <?php speert_list_menu('footer_quick_links', 'Quick Links'); ?>
+                <?php speert_list_menu('footer_information', 'Information'); ?>
+
                 <div class="col-xs-6 col-lg-2 col-md-3">
                     <h5>Instagram</h5>
                 </div>
