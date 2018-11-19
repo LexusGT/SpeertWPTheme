@@ -25,6 +25,11 @@ require get_template_directory() . '/inc/post-type.php';
  */
 require get_template_directory() . '/inc/ad.php';
 
+/**
+ * Load TGM
+ */
+require get_template_directory() . '/inc/init-tgm.php';
+
 // Setup theme
 function speert_setup() {
 	load_theme_textdomain( 'lng_speert' ); // localization
