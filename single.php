@@ -44,6 +44,51 @@
                         <figcaption class="wp-caption-text">Architects unveils design for New Dubai Tower</figcaption>
                     </figure>
                     <p>Dubai Nhabitat directs its facade to the <a href="#">Sheikh Ziyad</a> road on the front of the project plot, while it provides the control of the pedestrian and vehicle network with the connection to the subway station located at the ground level. Dubai Nhabitat opens up the urban use by arranging the rear part of the building as walkable as possible, while linking the floor with the intensive transition distribution on the main road, explained rggA.</p>
+                    <table>
+                        <caption>The leaders of the construction industry</caption>
+                        <tr>
+                            <th>Jobs</th>
+                            <th>2017</th>
+                            <th>2018</th>
+                            <th>2019</th>
+                        </tr>
+                        <tr>
+                            <td>Construction</td>
+                            <td>6 911 000</td>
+                            <td>6 903 000</td>
+                            <td>6 727 000</td>
+                        </tr>
+                        <tr>
+                            <td>Residential Building</td>
+                            <td>757 100</td>
+                            <td>761 000</td>
+                            <td>746 400</td>
+                        </tr>
+                        <tr>
+                            <td>Nonresidential Biulding</td>
+                            <td>770 700</td>
+                            <td>765 900</td>
+                            <td>747 900</td>
+                        </tr>
+                        <tr>
+                            <td>Heavy &Civil Engineering</td>
+                            <td>972 500</td>
+                            <td>974 100</td>
+                            <td>941 100</td>
+                        </tr>
+                        <tr>
+                            <td>Residential Specialty Trade Contactors</td>
+                            <td>1 935 800</td>
+                            <td>1 935 400</td>
+                            <td>1 865 900</td>
+                        </tr>
+                        <tr>
+                            <td>Nonresidential Specialty Trade Contactors</td>
+                            <td>2 474 800</td>
+                            <td>2 466 300</td>
+                            <td>2 425 700</td>
+                        </tr>
+                    </table>
                     <p>Opening the rear side of the building to urban use with its specially- arranged landscape design as walkable as possible, the tower connects its dense pedestrian network to the main road at the ground level.</p>
                     <h2>Sacrifices and singing H2</h2>
                     <p>Dubai Nhabitat is planned to be constructed by using an algorithmic software program and to be constructed with a composite system, including steel and concrete. In this sense, Dubai Nhabitat is designed by taking into consideration its carbon footprint on the ground as minimum level as possible, as well as considering Dubai’s local eco-system and reducing the environmental impacts of the construction. All modules, which can beproduced by being enlarged or shrunk by a 8mx8m gridded layout, utilize daylight as much as possible and is defined by windows and partly full surfaces opening through the module to ensure maximum energy efficiency.</p>
