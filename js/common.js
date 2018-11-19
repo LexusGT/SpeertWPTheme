@@ -22,13 +22,13 @@ $(document).ready(function() {
 		}
 	});
 
-	$('.header-menu-parent span').click(function() {
-		if ($(this).parent().children('.menu-child').css("display")=="none") {
-			$('.menu-child').hide('normal');
-			$(this).parent().children('.menu-child').show('normal');
+	$('.menu-item-has-children').click(function() {
+		if ($(this).children('.sub-menu').css("display")=="none") {
+			$('.sub-menu').hide('normal');
+			$(this).children('.sub-menu').show('normal');
 			$(this).addClass('active');
 		} else {
-			$('.menu-child').hide('normal');
+			$('.sub-menu').hide('normal');
 			$(this).removeClass('active');
 		}
 	});
