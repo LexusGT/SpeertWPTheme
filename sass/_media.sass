@@ -31,6 +31,9 @@
 +media-breakpoint-down(sm)
 @media screen and (max-device-width: 768px)
 	body
+		&.admin-bar
+			.header
+				top: 45px
 		margin-top: 50px
 	// header
 	.header-menu-btn
@@ -176,7 +179,12 @@
 
 // ≥576px
 +media-breakpoint-down(xs)
-@media screen and (max-device-width: 576px)
+@media screen and (max-device-width: 600px)
+	#wpadminbar
+		position: fixed
+	body
+		.header
+			top: 45px
 	.btn_showmore
 		display: block
 	.section-head-right

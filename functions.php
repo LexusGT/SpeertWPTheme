@@ -135,6 +135,7 @@ function speert_name_scripts() {
 	wp_enqueue_script( 'slick', get_template_directory_uri() . '/libs/slick/slick.min.js', array(), false, true );
 	wp_localize_script( 'script-min', 'speert_ajax', array('url' => admin_url('admin-ajax.php')) ); 
 }
+	
 
 // Настройка отрывка поста: кол-во выводимых слов
 function new_excerpt_length($length) {
