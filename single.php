@@ -306,8 +306,8 @@
                         <form action="http://root.wpshop.tech/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate="">
                             <textarea class="comment-form-comment" placeholder="White you comment here.." id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea>
                             <div class="comment-form-bottom">
-                                <input class="comment-form-input" placeholder="Name" id="author" name="author" type="text" value="" size="30" maxlength="245" required="required">
-                                <input class="comment-form-input" placeholder="E-mail" id="email" name="email" type="email" value="" size="30" maxlength="100" required="required">
+                                <input class="comment-form-input" placeholder="Name" id="author" name="author" type="text" value="" required="required">
+                                <input class="comment-form-input" placeholder="E-mail" id="email" name="email" type="email" value="" required="required">
                                 <div class="form-submit">
                                     <input name="submit" type="submit" id="submit" class="submit" value="Submit comment">
                                     <input type="hidden" name="comment_post_ID" value="4" id="comment_post_ID">
