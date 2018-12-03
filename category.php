@@ -2,6 +2,7 @@
 
 <section class="page-head">
     <div class="container">
+        
         <div class="row">
             <div class="col-md-12 page-head-center">
 
@@ -22,11 +23,6 @@
 
             </div>
         </div>
-    </div>
-</section>
-
-<section class="page-content">
-    <div class="container">
         <div class="row">
             <div class="col-lg-8 page-content-text">
 
@@ -107,6 +103,7 @@
                 </div>
             </div>
         </div>
+
     </div>
 </section>
 
