@@ -38,6 +38,17 @@
             <div class="row">
                 <div class="col-lg-8 page-content-text">
                     <p>Ankara-based architecture firm rgg Architects has unveiled design for a new mixed-use tower in Dubai, UAE. Called Dubai Nhabitat, the building challenges Dubai's vertical urban density with its permeability and multiple uses. Described as "a permeable and living structure in Dubai", the tower will be the firm's first major project in the United Arab Emirates.</p>
+
+                    <div class="accent alert">
+                        <div class="accent-title">
+                            <div class="accent-icon"></div>
+                            <p>Alert</p>
+                        </div>
+                        <div class="accent-text">
+                            <p>Dubai Nhabitat directs its facade to the Sheikh Ziyad road on the front of the project plot, while it provides the control of the pedestrian and vehicle network with the connection to the subway station located at the ground level. Dubai Nhabitat opens up the urban use by arranging the rear part of the building as walkable as possible.</p>
+                        </div>
+                    </div>
+
                     <p>Located in the <a href="#">Marina</a> district of Dubai, the 310-metre tower is planned to be built at the center of the district's bussiness hub and high-rise office towers, the Dubai Nhabitat tower is conceptualized with an architectural approach that permits as transparent, perceivable and pluralistic uses as possible.</p>
                     <figure>
                         <img src="<? echo get_bloginfo('template_url'); ?>/img/preview/page-img-2.jpg" class="page-content-thumb">
@@ -91,7 +102,18 @@
                     </table>
                     <p>Opening the rear side of the building to urban use with its specially- arranged landscape design as walkable as possible, the tower connects its dense pedestrian network to the main road at the ground level.</p>
                     <h2>Sacrifices and singing H2</h2>
-                    <p>Dubai Nhabitat is planned to be constructed by using an algorithmic software program and to be constructed with a composite system, including steel and concrete. In this sense, Dubai Nhabitat is designed by taking into consideration its carbon footprint on the ground as minimum level as possible, as well as considering Dubai’s local eco-system and reducing the environmental impacts of the construction. All modules, which can beproduced by being enlarged or shrunk by a 8mx8m gridded layout, utilize daylight as much as possible and is defined by windows and partly full surfaces opening through the module to ensure maximum energy efficiency.</p>
+                    <p>Dubai Nhabitat is planned to be constructed by using an algorithmic software program and to be constructed with a composite system, including steel and concrete. In this sense, Dubai Nhabitat is designed by taking into consideration its carbon footprint on the ground as minimum level as possible, as well as considering Dubai’s local eco-system and reducing the environmental impacts of the construction. </p>
+                    <div class="accent attention">
+                        <div class="accent-title">
+                            <div class="accent-icon"></div>
+                            <p>Attention</p>
+                        </div>
+                        <div class="accent-text">
+                            <p>Dubai Nhabitat directs its facade to the Sheikh Ziyad road on the front of the project plot, while it provides the control of the pedestrian and vehicle network with the connection to the subway station located at the ground level. Dubai Nhabitat opens up the urban use by arranging the rear part of the building as walkable as possible.</p>
+                        </div>
+                    </div>
+                    <p>All modules, which can beproduced by being enlarged or shrunk by a 8mx8m gridded layout, utilize daylight as much as possible and is defined by windows and partly full surfaces opening through the module to ensure maximum energy efficiency.</p>
+                    
                     <figure class="alingleft">
                         <img src="<? echo get_bloginfo('template_url'); ?>/img/preview/page-img-3.jpg" class="page-content-thumb">
                         <figcaption class="wp-caption-text">Rotterdam-based architecture firm Barcode Architects</figcaption>
@@ -118,6 +140,16 @@
                         <span>architect, Daniel Libeskind</span>
                     </blockquote>
                     <p>Volcanic rocks form Bandai-san are used for foundation footings, and a stilt system is adopted to build the house above the 2m-high snow a peculiar feature of this area. Two housing blocks - providing a space of 12 and 18 ft. long - with a floor and a roof are constructed.</p>
+                    <div class="accent question">
+                        <div class="accent-title">
+                            <div class="accent-icon"></div>
+                            <p>Question</p>
+                        </div>
+                        <div class="accent-text">
+                            <p>Dubai Nhabitat directs its facade to the Sheikh Ziyad road on the front of the project plot, while it provides the control of the pedestrian and vehicle network with the connection to the subway station located at the ground level. Dubai Nhabitat opens up the urban use by arranging the rear part of the building as walkable as possible.</p>
+                        </div>
+                    </div>
+                    <p>Opening the rear side of the building to urban use with its specially- arranged landscape design as walkable as possible, the tower connects its dense pedestrian network to the main road at the ground level.</p>
                     <h3>Sacrifices and singing H3</h3>
                     <p>But, the interior of the house presents a warm environment with minimalist furnitures and fire places, by also watching aesthetic slender columns that are visible from the house's structure. All the interior space is made of lumber and creates a fragmented ceiling to provide the maximum height for the house.</p>
                     <ol>
