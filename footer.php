@@ -7,14 +7,14 @@
                     <p><?php echo get_theme_mod('footer_about');?></p>
                     <div class="footer-social-links">
                         <ul>
-                            <li><a href="#"><img src="<? echo get_bloginfo('template_url'); ?>/img/fb.png" alt=""></a></li>
-                            <li><a href="#"><img src="<? echo get_bloginfo('template_url'); ?>/img/gp.png" alt=""></a></li>
-                            <li><a href="#"><img src="<? echo get_bloginfo('template_url'); ?>/img/ins.png" alt=""></a></li>
-                            <li><a href="#"><img src="<? echo get_bloginfo('template_url'); ?>/img/ok.png" alt=""></a></li>
-                            <li><a href="#"><img src="<? echo get_bloginfo('template_url'); ?>/img/tg.png" alt=""></a></li>
-                            <li><a href="#"><img src="<? echo get_bloginfo('template_url'); ?>/img/tw.png" alt=""></a></li>
-                            <li><a href="#"><img src="<? echo get_bloginfo('template_url'); ?>/img/vk.png" alt=""></a></li>
-                            <li><a href="#"><img src="<? echo get_bloginfo('template_url'); ?>/img/yt.png" alt=""></a></li>
+                            <li><a href="#" class='footer-social-icon fb'></a></li>
+                            <li><a href="#" class='footer-social-icon gl'></a></li>
+                            <li><a href="#" class='footer-social-icon inst'></a></li>
+                            <li><a href="#" class='footer-social-icon ok'></a></li>
+                            <li><a href="#" class='footer-social-icon tg'></a></li>
+                            <li><a href="#" class='footer-social-icon tw'></a></li>
+                            <li><a href="#" class='footer-social-icon vk'></a></li>
+                            <li><a href="#" class='footer-social-icon yt'></a></li>
                         </ul>
                     </div>
                 </div>
