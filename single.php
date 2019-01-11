@@ -1,31 +1,18 @@
 <?php get_header(); ?>
+<?php the_post(); ?>
     <!-- End Header -->
     <section class="page-head">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-lg-1 page-head-share">
-                    <ul>
-                        <li><a href="#" class="icon-share icon-vkontakte"></a></li>
-                        <li><a href="#" class="icon-share icon-twitter"></a></li>
-                        <li><a href="#" class="icon-share icon-facebook"></a></li>
-                        <li><a href="#" class="icon-share icon-odnoklassniki"></a></li>
-                        <li><a href="#" class="icon-share icon-gplus"></a></li>
-                    </ul>
+                    <?php speert_share_btn(); ?>
                 </div>
                 <div class="col-md-12 col-lg-9 page-head-center">
-                    <h1>Sacrifices and singing as Jazmin Sawyers goes for Gold Coast glory</h1>
-                    <div class="page-desc">The Commonwealth long jump silver medallist on the changes she has made and her experience recording the official anthem of Commonwealth Games England</div>
-                    <div class="page-more">
-                        <div class="page-content-crumb"><a href="#">Category</a></div>
-                        <div class="page-content-author">Administrator</div>
-                        <div class="page-content-date">March 23, 2018</div>
-                    </div>
+                    <h1><?php the_title(); ?></h1>
+                    <?php speert_the_excerpt($post); ?>
+                    <div class="page-more"><?php speert_meta($post); ?></div>
                 </div>
-                <div class="col-md-3 col-lg-2 page-next">
-                    <a href="#" class="page-next-img" style="background-image: url(<? echo get_bloginfo('template_url'); ?>/img/preview/next.jpg)"></a>
-                    <div class="page-next-link"><a href="#">There’s much more in store for Laura Muir, says Kelly</a></div>
-                    <div class="page-next-btn"><a href="#">Next →</a></div>
-                </div>
+                <div class="col-md-3 col-lg-2 page-next"><?php speert_the_next_post($post); ?></div>
             </div>
         </div>
     </section>

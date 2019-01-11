@@ -26,6 +26,11 @@ require get_template_directory() . '/inc/post-type.php';
 require get_template_directory() . '/inc/ad.php';
 
 /**
+ * Ad
+ */
+require get_template_directory() . '/inc/blocks.php';
+
+/**
  * Load TGM
  */
 require get_template_directory() . '/inc/init-tgm.php';
@@ -112,7 +117,9 @@ function speert_list_menu($menu_name, $list_name) {
 // Регистрируем новый размер миниатюр
 add_image_size( 'm-m', 580, 300, true );
 add_image_size( 's-s', 394, 210 );
+add_image_size( 's-m', 353, 235 );
 add_image_size( 'x-x', 288, 154 );
+add_image_size( 'ss-ss', 100, 100 );
 
 // Удаляем создание стандартных миниатюр
 function speert_remove_image_sizes( $sizes) {

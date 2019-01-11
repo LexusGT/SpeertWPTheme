@@ -57,3 +57,10 @@ function speert_the_count_posts_archive($taxonomy) {
 	$text = $count > 1 ? 'Arcticles' : 'Arcticle';
 	echo $count . ' ' . $text;
 }
+
+function speert_meta($post) {
+	$html = '<div class="page-content-crumb">'. speert_category($post) .'</div>';
+	$html .= '<div class="page-content-author">'. get_the_author() .'</div>';
+	$html .= '<div class="page-content-date">'. get_the_date( '', $post ) .'</div>';
+	echo $html;
+}

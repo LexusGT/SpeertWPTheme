@@ -38,7 +38,7 @@
 
                     <?php foreach ($posts_slider_right as $post) { setup_postdata($post); ?>
                     <div class="hot-news-item">
-                        <div class="hot-news-item-img" style="background-image: url(<?php echo get_the_post_thumbnail_url($post, 'x-x') ?>);"></div>
+                        <div class="hot-news-item-img" style="background-image: url(<?php echo get_the_post_thumbnail_url($post, 's-m') ?>);"></div>
                         <div class="hot-news-item-wrap">
                             <a class="hot-news-item-head" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                             <div class="hot-news-item-info"><?php echo speert_category( $post, '', '', null ); ?> / <?php echo get_the_date(); ?></div>
