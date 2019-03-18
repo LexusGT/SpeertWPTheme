@@ -1,4 +1,4 @@
-<?php $comments = get_comments( array('count' => 2) ); ?>
+<?php $comments = get_comments( array('number' => 2) ); ?>
 
 <?php if ( !empty($comments) ) : ?>
 	

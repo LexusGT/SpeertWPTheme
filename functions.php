@@ -35,6 +35,11 @@ require get_template_directory() . '/inc/blocks.php';
  */
 require get_template_directory() . '/inc/init-tgm.php';
 
+/**
+ * Comments
+ */
+require get_template_directory() . '/inc/comments.php';
+
 // Setup theme
 function speert_setup() {
 	load_theme_textdomain( 'lng_speert' ); // localization

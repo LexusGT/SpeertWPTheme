@@ -8,7 +8,7 @@
             <div class="section-head-left">
                 <h2>Gallery</h2>
             </div>
-            <div class="section-head-right"><a href="#">Show more</a></div>
+            <div class="section-head-right"><a href="<?php echo get_post_type_archive_link('photo'); ?>">Show more</a></div>
         </div>
         <div class="no-gutters gallery-wrap">
 

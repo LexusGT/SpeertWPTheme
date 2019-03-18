@@ -7,7 +7,7 @@
             <div class="section-head-left">
                 <h2>Top video</h2>
             </div>
-            <div class="section-head-right"><a href="#">Show more</a></div>
+            <div class="section-head-right"><a href="<?php echo get_post_type_archive_link('video'); ?>">Show more</a></div>
         </div>
         <div class="row video">
 
