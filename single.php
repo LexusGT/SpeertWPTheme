@@ -22,11 +22,14 @@
             <?php
             $attr = array('class' => "page-content-thumb");
             the_post_thumbnail( 'full', $attr );
+            echo '<div class="page-head-line"></div>'
             ?>
             <?php
             $caption = get_the_post_thumbnail_caption();
             if ( !empty($caption) )
                 echo '<div class="page-content-thumb-desc">'. $caption .'</div>';
+            else 
+                echo '<div class="page-content-thumb-pd"></div>';
             ?>
         </div>
         <div class="row">

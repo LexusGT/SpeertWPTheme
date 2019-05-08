@@ -112,6 +112,7 @@
         </div>
         <a href="#" class="btn_showmore">Show more</a>
         <div class="col-lg-4">
+            <div class="pdt20"></div>
             <?php speert_banner_right_sidebar(); ?>
         </div>
     </div>

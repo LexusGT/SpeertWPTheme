@@ -146,6 +146,8 @@ body.no_scroll
 	&:hover
 		color: #fff
 		background-color: darken($blue, 10%)
+.pdt20
+	padding-top: 20px
 
 
 // Start Header
@@ -364,6 +366,7 @@ body.no_scroll
 				display: block
 				background-image: linear-gradient(to bottom,rgba(51,67,99,0) 30%,rgba(51,67,99,.4) 100%)
 				position: absolute
+				top: 0
 				width: 100%
 				height: 100%
 		&-wrap
@@ -897,6 +900,9 @@ body.no_scroll
 .page
 	&-head
 		margin: 50px 0 25px
+		&-line
+			border-bottom: 2px dashed #f7f7f7
+			padding-top: 10px
 		&-center
 			padding-right: 60px
 		&-share
@@ -964,6 +970,7 @@ body.no_scroll
 	&-content
 		&-thumb
 			width: 100%
+			height: auto;
 			&-desc
 				font-size: 13px
 				color: lighten($dark, 70%)
@@ -975,6 +982,14 @@ body.no_scroll
 					width: 20px
 					margin: 0 10px 4px 0
 					background-color: lighten($dark, 70%)
+			&-pd
+				display: block
+				height: 40px
+		& figure
+			width: 100%!important
+		& img
+			max-width: 100%
+			height: auto
 		&-text
 			font-size: 15px
 			line-height: 24px
@@ -1079,15 +1094,15 @@ body.no_scroll
 		background-position: center
 		background-repeat: no-repeat
 	&.attention
-		border: 1px solid #d6c9b9
+		border: 2px solid #FF9800
 		.accent-icon
-			background-color: #d6c9b9
+			background-color: #FF9800
 			background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMiAxMiI+ICA8ZGVmcz4gICAgPHN0eWxlPiAgICAgIC5jbHMtMSB7ICAgICAgICBmaWxsOiAjZmZmOyAgICAgIH0gICAgPC9zdHlsZT4gIDwvZGVmcz4gIDxnIGlkPSJ3YXJuaW5nIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMC4wMDEgLTE0LjUxOSkiPiAgICA8ZyBpZD0iR3JvdXBfMSIgZGF0YS1uYW1lPSJHcm91cCAxIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLjAwMSAxNC41MTkpIj4gICAgICA8cGF0aCBpZD0iUGF0aF8xIiBkYXRhLW5hbWU9IlBhdGggMSIgY2xhc3M9ImNscy0xIiBkPSJNMTEuNzU3LDIzLjcxNCw3LjUxMywxNS40MzJhMS43MSwxLjcxLDAsMCwwLTMuMDI2LDBsLS4wMDcuMDEzTC4yNSwyMy43YTEuOTQxLDEuOTQxLDAsMCwwLS4wMTcsMS44NzUsMS43MjYsMS43MjYsMCwwLDAsMS41My45NDNoOC40NWExLjc2MSwxLjc2MSwwLDAsMCwxLjU1My0uOTQzQTEuOTM0LDEuOTM0LDAsMCwwLDExLjc1NywyMy43MTRaTTUuMywxOC4zMTFhLjcwNS43MDUsMCwxLDEsMS40MDgsMFYyMS4zYS43MDUuNzA1LDAsMSwxLTEuNDA4LDBWMTguMzExWk02LDI1LjAyN2ExLjEyMSwxLjEyMSwwLDAsMSwwLTIuMjM4LDEuMTIxLDEuMTIxLDAsMCwxLDAsMi4yMzhaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMC4wMDEgLTE0LjUxOSkiLz4gICAgPC9nPiAgPC9nPjwvc3ZnPg==)
 			background-size: 12px
 		.accent-title
-			color: #d6c9b9
+			color: #FF9800
 	&.question
-		border: 1px solid #42BBEE
+		border: 2px solid #42BBEE
 		.accent-icon
 			background-color: #42BBEE
 			background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4IDEyIj4gIDxkZWZzPiAgICA8c3R5bGU+ICAgICAgLmNscy0xIHsgICAgICAgIGZpbGw6ICNmZmY7ICAgICAgfSAgICA8L3N0eWxlPiAgPC9kZWZzPiAgPGcgaWQ9InF1ZXN0aW9uLW1hcmsiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC01LjM0KSI+ICAgIDxwYXRoIGlkPSJQYXRoXzIiIGRhdGEtbmFtZT0iUGF0aCAyIiBjbGFzcz0iY2xzLTEiIGQ9Ik05LjE3NiwwYzIuMSwwLDQuMTY0Ljk1Niw0LjE2NCwzLjI0MiwwLDIuMTA5LTIuNDQzLDIuOTE5LTIuOTY3LDMuNjgxLS4zOTQuNTY3LS4yNjIsMS4zNjMtMS4zNDQsMS4zNjNBMS4wMzcsMS4wMzcsMCwwLDEsNy45NzksNy4yYzAtMS45MzEsMi44NjgtMi4zNjgsMi44NjgtMy45NTgsMC0uODc1LS41ODktMS4zOTQtMS41NzMtMS4zOTQtMi4xLDAtMS4yNzksMi4xNC0yLjg2OCwyLjE0QS45NzcuOTc3LDAsMCwxLDUuMzQsM0M1LjM0LDEuNDA5LDcuMTc1LDAsOS4xNzYsMFpNOS4wOTQsOS4zNGExLjMzLDEuMzMsMCwxLDEtMS4zNDUsMS4zM0ExLjM0NCwxLjM0NCwwLDAsMSw5LjA5NCw5LjM0WiIvPiAgPC9nPjwvc3ZnPg==)
@@ -1095,7 +1110,7 @@ body.no_scroll
 		.accent-title
 			color: #42BBEE
 	&.alert
-		border: 1px solid #FF4E00
+		border: 2px solid #FF4E00
 		.accent-icon
 			background-color: #FF4E00
 			background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMCAxMCI+ICA8ZGVmcz4gICAgPHN0eWxlPiAgICAgIC5jbHMtMSB7ICAgICAgICBmaWxsOiAjZmZmOyAgICAgIH0gICAgPC9zdHlsZT4gIDwvZGVmcz4gIDxnIGlkPSJkZWxldGUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE4IDE4MC45OTgpIj4gICAgPHBhdGggaWQ9IlBhdGhfMyIgZGF0YS1uYW1lPSJQYXRoIDMiIGNsYXNzPSJjbHMtMSIgZD0iTTkuNjYyLDEuOTcxLDYuNjMyLDVsMy4wMywzLjAzQTEuMTU0LDEuMTU0LDAsMSwxLDguMDMsOS42NjRMNSw2LjYzM2wtMy4wMywzLjAzQTEuMTU0LDEuMTU0LDAsMCwxLC4zMzgsOC4wMzJMMy4zNjgsNSwuMzM4LDEuOTcxQTEuMTU0LDEuMTU0LDAsMCwxLDEuOTY5LjM0TDUsMy4zNyw4LjAzLjM0QTEuMTU0LDEuMTU0LDAsMCwxLDkuNjYyLDEuOTcxWiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTE4IC0xODEpIi8+ICA8L2c+PC9zdmc+)
@@ -1227,6 +1242,71 @@ figure
 	margin: 10px 30px 0 0
 // End Page
 
+// Start Pagination
+.pagination
+	width: 100%
+	border-top: 1px solid #f7f7f7
+	padding: 40px 0 10px
+	& a
+		color: #0f121d
+		&:hover
+			color: #ff4e00
+	& .current
+		color: #ff4e00
+	& ul
+		position: relative
+		margin: 0
+		padding: 0
+		text-align: center
+		& li
+			text-decoration: none
+			display: inline-block
+			min-width: 50px
+.prev
+	position: absolute
+	left: 0
+	top: 0
+	display: inline-block
+	width: 70px
+	height: 24px
+	border-right: 1px solid #ebebeb
+	&:after
+		content: ''
+		border: 4px solid transparent
+		border-right: 6px solid #42bbee
+		display: block
+		width: 0
+		height: 0
+		position: absolute
+		top: 9px
+		right: 32px
+	&:hover
+		&:after
+			border-right: 6px solid #ff4e00
+.next
+	position: absolute
+	right: 0
+	top: 0
+	display: inline-block
+	width: 70px
+	height: 24px
+	border-left: 1px solid #ebebeb
+	&:after
+		content: ''
+		border: 4px solid transparent
+		border-left: 6px solid #42bbee
+		display: block
+		width: 0
+		height: 0
+		position: absolute
+		top: 9px
+		left: 32px
+	&:hover
+		&:after
+			border-left: 6px solid #ff4e00
+// End Pagination
+
+
 .img-cat
 	column-count: 2
 	column-gap: 0
@@ -1262,15 +1342,14 @@ figure
 // Start Comments
 .comments
 	background-color: #fffaf4
-	ol
+	ol, ul
 		list-style-type: none
 		padding: 0
-	ol.children
+	ul.children
 		margin-left: 55px
 		& .comment-body
 			margin-left: 0px
-		& ol.children
-			//margin-left: 0px
+		& ul.children
 			.comment-avatar img
 				width: 28px
 				height: 28px
