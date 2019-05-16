@@ -8,8 +8,18 @@
                 </ol>
                 <!-- .comment-list -->
                 <div id="respond" class="comment-respond">
-                    <div id="reply-title" class="comment-reply-title">Leave a Reply<small><a rel="nofollow" id="cancel-comment-reply-link" href="/testovyj-post/#respond" style="display:none;">Leave a Reply</a></small></div>
-                    <?php comment_form(); ?>
+                    <?php
+
+                    $defaults = array(
+                        'comment_field'        => '<p class="comment-form-comment"><textarea id="comment" placeholder="White you comment here.." name="comment"  aria-required="true" required="required"></textarea></p>',
+                         'fields'               => array(
+                            'author' => '<p class="comment-form-author"><input id="author" placeholder="' . __( 'Name' ) . '" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" required="required" /></p>',
+                            'email'  => '<p class="comment-form-email"><input id="email" placeholder="' . __( 'Email' ) . '" name="email" type="email" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" aria-describedby="email-notes" required="required" /></p>',
+                        ),
+                    );
+                    
+                    comment_form( $defaults );
+                    ?>
                 </div>
                 <!-- #respond -->
             </div>

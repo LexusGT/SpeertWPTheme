@@ -1,4 +1,4 @@
-<div class="latest-item">
+<div <?php post_class('latest-item'); ?>>
     <a href="<?php the_permalink(); ?>">
         <div class="latest-item-img" style="background-image: url(<?php the_post_thumbnail_url(); ?>);"></div>
     </a>

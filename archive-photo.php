@@ -14,19 +14,14 @@
         </div>
         <div class="row">
             <div class="col-lg-12 page-content-text">
-                <?php
-                $current_page = (get_query_var('paged')) ? get_query_var('paged') : 1;
-                $posts = get_posts( array('post_type' => 'photo', 'paged' => $current_page, 'posts_per_page' => 8) );
-                ?>
 
-                <?php if ( !empty($posts) ) : ?>
+                <?php if( have_posts() ) : ?>
 
                     <div class="no-gutters img-cat">
 
-                        <?php foreach ($posts as $post) { ?>
+                        <?php while( have_posts() ){ the_post(); ?>
 
-                        <?php setup_postdata($post); ?>
-                        <div class="img-cat-item">
+                        <div <?php post_class('img-cat-item'); ?>>
                             <a href="<?php the_permalink();?>">
                                 <img src="<?php echo get_the_post_thumbnail_url($post, 'm-m') ?>" alt="">
                                 <div class="img-cat-item-more">
@@ -43,7 +38,7 @@
                     </div>
 
                     <div class="row">
-                        <?php the_posts_pagination(); ?>
+                        <?php get_template_part('inc/pagination'); ?>
                     </div>
 
                 <?php endif; ?>

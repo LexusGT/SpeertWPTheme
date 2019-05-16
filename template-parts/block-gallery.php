@@ -14,7 +14,7 @@
 
             <?php foreach ($posts as $post) { ?>
             <?php setup_postdata($post); ?>
-            <div class="gallery-item" style="background-image: url(<?php echo get_the_post_thumbnail_url($post, 'm-m') ?>);">
+            <div <?php post_class('gallery-item'); ?> style="background-image: url(<?php echo get_the_post_thumbnail_url($post, 'm-m') ?>);">
                 <a href="<?php the_permalink();?>">
                     <div class="gallery-item-more align-items-center">
                         <span class="icon-eye-1">28 </span>

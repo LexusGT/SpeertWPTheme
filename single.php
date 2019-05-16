@@ -21,8 +21,10 @@
         <div>
             <?php
             $attr = array('class' => "page-content-thumb");
-            the_post_thumbnail( 'full', $attr );
-            echo '<div class="page-head-line"></div>'
+            if ( has_post_thumbnail() )
+                the_post_thumbnail( 'full', $attr );
+            else
+                echo '<div class="page-head-line"></div>';
             ?>
             <?php
             $caption = get_the_post_thumbnail_caption();

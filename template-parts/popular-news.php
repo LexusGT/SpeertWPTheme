@@ -12,7 +12,7 @@
             foreach( $myposts as $post ){
                 setup_postdata($post);
                 ?>
-                <div class="popular-item">
+                <div <?php post_class('popular-item'); ?>>
                     <a href="<?php the_permalink();?>">
                         <div class="popular-item-img" style="background-image: url(<?php echo get_the_post_thumbnail_url($post, 'ss-ss') ?>);"></div>
                     </a>

@@ -15,15 +15,9 @@
         </div>
 
         <div class="row video">
-            <?php
-            $current_page = (get_query_var('paged')) ? get_query_var('paged') : 1;
-            $posts = get_posts( array('post_type' => 'video', 'paged' => $current_page, 'posts_per_page' => 8) );
-            ?>
+            <?php if( have_posts() ){ while( have_posts() ){ the_post(); ?>
 
-            <?php foreach ($posts as $post) { ?>
-            <?php setup_postdata($post); ?>
-
-            <div class="col-md-6 video-cat-item">
+            <div <?php post_class('col-md-6 video-cat-item'); ?>>
                 <div style="padding:56.25% 0 0 0;position:relative;" class="video-item-block">
                     <iframe src="<?php the_field('url_video'); ?>" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                 </div>
@@ -35,22 +29,11 @@
                 </div>
             </div>
 
-            <?php } ?>
+            <?php }} ?>
         </div>
 
         <div class="row">
-            <nav class="col-12 pagination">
-                <?php
-                    $menu = paginate_links(
-                        array(
-                            'prev_text'     => ' ',
-                            'next_text'     => '&nbsp',
-                            'type'          => 'list',
-                            )
-                        );
-                    echo $menu;
-                ?>
-            </nav>
+            <?php get_template_part('inc/pagination'); ?>
         </div>
 
     </div>

@@ -13,7 +13,7 @@
 
             <?php foreach ($posts as $post) { ?>
             <?php setup_postdata($post); ?>
-            <div class="col-md-6 video-item">
+            <div <?php post_class('col-md-6 video-item'); ?>>
                 <div style="padding:56.25% 0 0 0;position:relative;" class="video-item-block">
                     <iframe src="<?php the_field('url_video'); ?>" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                 </div>

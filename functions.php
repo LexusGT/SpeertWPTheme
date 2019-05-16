@@ -40,6 +40,12 @@ require get_template_directory() . '/inc/init-tgm.php';
  */
 require get_template_directory() . '/inc/comments.php';
 
+/**
+ * New buttons for TinyMCE
+ */
+require get_template_directory() . '/inc/edit_buttons/buttons.php';
+
+
 // Setup theme
 function speert_setup() {
 	load_theme_textdomain( 'lng_speert' ); // localization
@@ -124,7 +130,7 @@ add_image_size( 'm-m', 580, 300, true );
 add_image_size( 's-s', 394, 210 );
 add_image_size( 's-m', 353, 235 );
 add_image_size( 'x-x', 288, 154 );
-add_image_size( 'ss-ss', 100, 100 );
+add_image_size( 'ss-ss', 100, 100, true );
 
 // Удаляем создание стандартных миниатюр
 function speert_remove_image_sizes( $sizes) {
@@ -206,4 +212,17 @@ add_filter( 'get_the_archive_title', function( $title ){
 	return preg_replace('~^[^:]+: ~', '', $title );
 });
 
+add_filter( 'comment_form_default_fields', 'speert_comment_form_default_add_fields' );
+function speert_comment_form_default_add_fields( $fields ) {
+	unset( $fields['url'] );
+
+	return $fields;
+}
+
+function speert_pre_get_posts( $query ) {
+    if ( !is_admin() && $query->is_main_query() && $query->is_post_type_archive(array('video','photo')) ) {
+        $query->set( 'posts_per_page', 8 );
+    }
+}
+add_action( 'pre_get_posts', 'speert_pre_get_posts' );
 ?>

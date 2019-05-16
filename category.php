@@ -69,38 +69,7 @@
 
             </div>
             <div class="col-lg-4 rightbar">
-                <?php speert_banner_right_sidebar(); ?>
-                <div class="rightbar-popular">
-                    <h4>The most <strong>popular</strong></h4>
-
-                    <?php
-                    $args = array( 'numberposts' => 4, 'meta_key' => speert_get_type_sort_popular(), 'orderby' => 'meta_value_num', 'order' => 'DESC' );
-                    $myposts = get_posts( $args );
-                    $countEach = 1;
-                    foreach( $myposts as $post ){
-                        setup_postdata($post);
-                        ?>
-                        <div class="rightbar-popular-<?php echo $countEach == 1 ? 'top' : 'item'; ?>">
-                            <a href="<?php the_permalink(); ?>">
-                                <?php
-                                if ( $countEach == 1 )
-                                    the_post_thumbnail('m-m', array('itemprop'=>'image', 'class' => 'rightbar-popular-top-img'));
-                                else
-                                    the_post_thumbnail('x-x', array('itemprop'=>'image', 'class' => 'rightbar-popular-top-img'));
-                                ?>
-                            </a>
-                            <div class="rightbar-popular-top-text">
-                                <div class="rightbar-popular-link"><a href="<?php the_permalink(); ?>"><?php the_title()?></a></div>
-                                <div class="rightbar-popular-info"><?php echo speert_category( $post, '', '', true ); ?> / <?php echo get_the_date(); ?></div>
-                            </div>
-                        </div>
-                        <?php
-                        $countEach++;
-                    }
-                    wp_reset_postdata();
-                    ?>
-
-                </div>
+                <?php get_sidebar(); ?>
             </div>
         </div>
 

@@ -5,18 +5,22 @@
 
     <?php
     $args = array( 'numberposts' => 4, 'meta_key' => speert_get_type_sort_popular(), 'orderby' => 'meta_value_num', 'order' => 'DESC' );
+    $count = 1;
     $myposts = get_posts( $args );
     foreach( $myposts as $post ){
         setup_postdata($post);
+        $sizeThumb = $count == 1 ? 'm-m' : 'ss-ss';
+        $classThumb = $count == 1 ? 'rightbar-popular-top-img' : 'rightbar-popular-item-img';
         ?>
-        <div class="rightbar-popular-top">
-            <a href="<?php the_permalink(); ?>"><img class="rightbar-popular-top-img" src="<?php echo get_the_post_thumbnail_url($post, 's-m') ?>" alt=""></a>
+        <div class="rightbar-popular-<?php echo $count == 1 ? 'top' : 'item'; ?>">
+            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail($sizeThumb, array('itemprop'=>'image', 'class' => $classThumb)); ?></a>
             <div class="rightbar-popular-top-text">
                 <div class="rightbar-popular-link"><a href="#"><?php the_title(); ?></a></div>
                 <div class="rightbar-popular-info"><?php echo speert_category( $post, '', '', null ); ?> / <?php echo get_the_date(); ?></div>
             </div>
         </div>
         <?php
+        $count++;
     }
     wp_reset_postdata();
     ?>

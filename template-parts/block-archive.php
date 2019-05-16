@@ -21,7 +21,7 @@
                 foreach ($postsBlock as $post) {
                     setup_postdata($post);
                     ?>
-                    <div class="archive-item">
+                    <div <?php post_class('archive-item'); ?>>
                         <div class="col-lg-6 archive-item-left">
                             <a href="<?php the_permalink();?>">
                                 <div class="archive-item-left-img" style="background-image: url(<?php echo get_the_post_thumbnail_url($post, 'm-m') ?>);"></div>
