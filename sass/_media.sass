@@ -17,15 +17,22 @@
 				padding-right: 15px
 		&-next
 			display: none
-	.comment-form
-		&-bottom
-			flex-direction: column
-			margin-top: 0
-		&-input
-			margin: 5px 0
-	.form-submit
-		text-align: center
-		margin-top: 5px
+	.comment
+		&-form
+			&-bottom
+				flex-direction: column
+				margin-top: 0
+			&-input
+				margin: 5px 0
+			&-email, &-author
+				width: calc(50% - 8px)
+				margin-bottom: 12px
+			.form-submit
+				text-align: center
+				width: 100%
+		&-notes
+			width: 100%
+			text-align: center
 
 // ≥768px
 +media-breakpoint-down(sm)
@@ -308,8 +315,9 @@
 					content: none
 	blockquote span
 		margin-top: 12px
-	.form-submit [type=submit]
-		width: 100%
+	.comment-form
+		&-email, &-author
+			width: 100%
 	.rightbar
 		margin-bottom: 0
 	.pagination

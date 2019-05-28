@@ -1342,6 +1342,7 @@ figure
 // Start Comments
 .comments
 	background-color: #fffaf4
+	padding: 30px 0 40px
 	ol, ul
 		list-style-type: none
 		padding: 0
@@ -1355,8 +1356,6 @@ figure
 				height: 28px
 			.comment-author
 				padding-top: 2px
-.comments
-	padding: 30px 0 40px
 	&-title
 		font-size: 28px
 		font-family: $mery-font
@@ -1375,6 +1374,16 @@ figure
 				background-color: $accent
 				transform: translateY(16px)
 .comment
+	&-respond form
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+	&-notes, &-form .logged-in-as
+		order: 2
+		font-size: 14px
+		color: #d8c9b9
+		padding: 0 20px
+		width: 100%
 	&-box
 		padding: 0 15px 25px
 	&-list
@@ -1430,6 +1439,7 @@ figure
 		border: 1px solid #f6ece1
 		border-bottom: 0px
 		background-color: #fff
+		margin-bottom: 0
 		&::after
 			content: ''
 			display: block
@@ -1440,33 +1450,45 @@ figure
 	&-form
 		&-comment
 			width: 100%
-			padding: 10px 30px
-			border: 1px solid #f6ece1
-			border-top: 1px solid #fff
-			rezize: none
-			-webkit-appearance: none
-			&:required:valid
+			margin-bottom: 12px
+			line-height: 0
+			textarea
+				width: 100%
+				padding: 10px 30px
 				border: 1px solid #f6ece1
 				border-top: 1px solid #fff
-		&-bottom
-			display: flex
-			justify-content: space-between
-			margin-top: 5px
-		&-input
+				height: 220px
+				resize: none
+				-webkit-appearance: none
+				line-height: 1.65
+				&:required:valid
+					border: 1px solid #f6ece1
+					border-top: 1px solid #fff
+		input
+			width: 100%
 			font-size: 15px
 			height: 46px
 			border: 1px solid #f6ece1
 			padding: 0 20px
 			flex: 1 1 auto
-			margin-right: 20px
 			-webkit-appearance: none
+		
+		&-author, &-email, .form-submit
+			width: calc(33.33% - 8px)
+		&-bottom
+			display: flex
+			justify-content: space-between
+			margin-top: 5px
+
 .form-submit [type=submit]
 	background-color: $accent
 	border: 0
 	color: #fff
 	height: 46px
 	border-radius: 3px
-	width: 220px
+	cursor: pointer
+	&:hover
+		background-color: $blue
 // End Comments
 
 //Start footer

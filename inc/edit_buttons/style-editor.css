@@ -1,0 +1,85 @@
+.accent {
+    display: block;
+    width: 100%;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    padding: 25px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 20px 0;
+    font-size: 15px;
+    line-height: 24px;
+    color: #6d768e;
+}
+
+.accent-icon {
+    display: block;
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.accent-title {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.accent-title p {
+    font-weight: 700;
+    font-size: 18px;
+    margin: 0;
+}
+
+.accent.attention {
+    border: 2px solid #ff9800;
+}
+
+.accent.attention .accent-title {
+    color: #ff9800;
+}
+
+.accent.attention .accent-icon {
+    background-color: #ff9800;
+    -webkit-background-size: 12px 12px;
+    background-size: 12px;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMiAxMiI+ICA8ZGVmcz4gICAgPHN0eWxlPiAgICAgIC5jbHMtMSB7ICAgICAgICBmaWxsOiAjZmZmOyAgICAgIH0gICAgPC9zdHlsZT4gIDwvZGVmcz4gIDxnIGlkPSJ3YXJuaW5nIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMC4wMDEgLTE0LjUxOSkiPiAgICA8ZyBpZD0iR3JvdXBfMSIgZGF0YS1uYW1lPSJHcm91cCAxIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLjAwMSAxNC41MTkpIj4gICAgICA8cGF0aCBpZD0iUGF0aF8xIiBkYXRhLW5hbWU9IlBhdGggMSIgY2xhc3M9ImNscy0xIiBkPSJNMTEuNzU3LDIzLjcxNCw3LjUxMywxNS40MzJhMS43MSwxLjcxLDAsMCwwLTMuMDI2LDBsLS4wMDcuMDEzTC4yNSwyMy43YTEuOTQxLDEuOTQxLDAsMCwwLS4wMTcsMS44NzUsMS43MjYsMS43MjYsMCwwLDAsMS41My45NDNoOC40NWExLjc2MSwxLjc2MSwwLDAsMCwxLjU1My0uOTQzQTEuOTM0LDEuOTM0LDAsMCwwLDExLjc1NywyMy43MTRaTTUuMywxOC4zMTFhLjcwNS43MDUsMCwxLDEsMS40MDgsMFYyMS4zYS43MDUuNzA1LDAsMSwxLTEuNDA4LDBWMTguMzExWk02LDI1LjAyN2ExLjEyMSwxLjEyMSwwLDAsMSwwLTIuMjM4LDEuMTIxLDEuMTIxLDAsMCwxLDAsMi4yMzhaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMC4wMDEgLTE0LjUxOSkiLz4gICAgPC9nPiAgPC9nPjwvc3ZnPg==);
+    
+}
+
+.accent.alert {
+    border: 2px solid #ff4e00;
+}
+
+.accent.alert .accent-title {
+    color: #ff4e00;
+}
+
+.accent.alert .accent-icon {
+    background-color: #ff4e00;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMCAxMCI+ICA8ZGVmcz4gICAgPHN0eWxlPiAgICAgIC5jbHMtMSB7ICAgICAgICBmaWxsOiAjZmZmOyAgICAgIH0gICAgPC9zdHlsZT4gIDwvZGVmcz4gIDxnIGlkPSJkZWxldGUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE4IDE4MC45OTgpIj4gICAgPHBhdGggaWQ9IlBhdGhfMyIgZGF0YS1uYW1lPSJQYXRoIDMiIGNsYXNzPSJjbHMtMSIgZD0iTTkuNjYyLDEuOTcxLDYuNjMyLDVsMy4wMywzLjAzQTEuMTU0LDEuMTU0LDAsMSwxLDguMDMsOS42NjRMNSw2LjYzM2wtMy4wMywzLjAzQTEuMTU0LDEuMTU0LDAsMCwxLC4zMzgsOC4wMzJMMy4zNjgsNSwuMzM4LDEuOTcxQTEuMTU0LDEuMTU0LDAsMCwxLDEuOTY5LjM0TDUsMy4zNyw4LjAzLjM0QTEuMTU0LDEuMTU0LDAsMCwxLDkuNjYyLDEuOTcxWiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTE4IC0xODEpIi8+ICA8L2c+PC9zdmc+);
+    -webkit-background-size: 10px 10px;
+    background-size: 10px;
+}
+
+.accent.question {
+    border: 2px solid #42bbee;
+}
+
+.accent.question .accent-title {
+    color: #42bbee;
+}
+
+.accent.question .accent-icon {
+    background-color: #42bbee;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4IDEyIj4gIDxkZWZzPiAgICA8c3R5bGU+ICAgICAgLmNscy0xIHsgICAgICAgIGZpbGw6ICNmZmY7ICAgICAgfSAgICA8L3N0eWxlPiAgPC9kZWZzPiAgPGcgaWQ9InF1ZXN0aW9uLW1hcmsiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC01LjM0KSI+ICAgIDxwYXRoIGlkPSJQYXRoXzIiIGRhdGEtbmFtZT0iUGF0aCAyIiBjbGFzcz0iY2xzLTEiIGQ9Ik05LjE3NiwwYzIuMSwwLDQuMTY0Ljk1Niw0LjE2NCwzLjI0MiwwLDIuMTA5LTIuNDQzLDIuOTE5LTIuOTY3LDMuNjgxLS4zOTQuNTY3LS4yNjIsMS4zNjMtMS4zNDQsMS4zNjNBMS4wMzcsMS4wMzcsMCwwLDEsNy45NzksNy4yYzAtMS45MzEsMi44NjgtMi4zNjgsMi44NjgtMy45NTgsMC0uODc1LS41ODktMS4zOTQtMS41NzMtMS4zOTQtMi4xLDAtMS4yNzksMi4xNC0yLjg2OCwyLjE0QS45NzcuOTc3LDAsMCwxLDUuMzQsM0M1LjM0LDEuNDA5LDcuMTc1LDAsOS4xNzYsMFpNOS4wOTQsOS4zNGExLjMzLDEuMzMsMCwxLDEtMS4zNDUsMS4zM0ExLjM0NCwxLjM0NCwwLDAsMSw5LjA5NCw5LjM0WiIvPiAgPC9nPjwvc3ZnPg==);
+    -webkit-background-size: 8px 12px;
+    background-size: 8px 12px;
+}
+
