@@ -183,12 +183,16 @@
 		width: 100%
 		&-left
 			height: 275px
-	.rightbar-popular
-		&-item
-			& img
-				height: 58px
-		&-link
-			width: 100%
+	.rightbar
+		margin-bottom: 0
+		& > div:last-child
+			margin-bottom: 0
+		&-popular
+			&-item
+				& img
+					height: 58px
+			&-link
+				width: 100%
 	.footer
 		&-social-links
 			padding-bottom: 25px
@@ -204,6 +208,8 @@
 		body
 			.header
 				top: 45px
+	.padding_bg.n-mob
+		padding-bottom: 0px
 	.btn_showmore
 		display: block
 	.section-head-right
@@ -235,7 +241,7 @@
 			&-img img
 				height: 300px
 			&-text
-				bottom: 100px
+				bottom: 60px
 				& a
 					font-size: 24px
 					line-height: 32px
@@ -425,6 +431,11 @@
 			padding: 8px 10px 0
 			&-link
 				display: none
+			&-text
+				height: auto
+				&:after
+					bottom: auto
+					top: 60
 	.img404
 		width: 100px
 		margin: 0px auto 10px

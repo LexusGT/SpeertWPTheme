@@ -2,7 +2,7 @@
 
 <!-- Start Main Block -->
 <div class="container-fluid color_bg">
-    <div class="container padding_bg">
+    <div class="container padding_bg n-mob">
         <div class="row white_bg">
             <?php $posts_slider = get_field( "posts_home_slider", "option" ); ?>
             
