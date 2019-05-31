@@ -170,7 +170,7 @@ add_filter('excerpt_more', function($more) {
 function speert_customize_register( $wp_customize ) {
    //All our sections, settings, and controls will be added here
 	$wp_customize->add_setting( 'footer_copyright' , array(
-		'default'   => __('© 2018 Speert theme. All rights reserved.', 'speert'),
+		'default'   => __('© '. date('Y') .' Speert theme. All rights reserved.', 'speert'),
 		'transport' => 'refresh',
 	));
 
@@ -189,7 +189,7 @@ function speert_customize_register( $wp_customize ) {
 		array(
 			'label'    => __( 'Footer copyright', 'speert' ),
 			'section'  => 'footer_section',
-			'settings' => 'footer_copyright', //id настройки
+			'settings' => 'footer_copyright',
 			'type'     => 'text',
 		)
 	);
@@ -199,7 +199,7 @@ function speert_customize_register( $wp_customize ) {
 		array(
 			'label'    => __( 'Footer about text', 'speert' ),
 			'section'  => 'footer_section',
-			'settings' => 'footer_about', //id настройки
+			'settings' => 'footer_about',
 			'type'     => 'textarea',
 		)
 	);
@@ -225,4 +225,8 @@ function speert_pre_get_posts( $query ) {
     }
 }
 add_action( 'pre_get_posts', 'speert_pre_get_posts' );
+
+function speert_default_thumbnail() {
+	return get_template_directory_uri() . '/img/no_photo.jpg';
+}
 ?>

@@ -35,7 +35,7 @@
         </div>
         <div class="row search-wrap">
             <div class="container">
-                <form class="search-form">
+                <form action="/" class="search-form">
                     <input type="search" name="s" placeholder="Lost something?">
                     <button type="submit" name="submit" value="Search">Search</button>
                 </form>

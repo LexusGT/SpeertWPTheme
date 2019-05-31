@@ -21,9 +21,9 @@
                     <div class="search-page center">
                         <img src="<?php bloginfo('template_directory'); ?>/img/404.svg" alt="Error 404" class="img404">
                         <h3>Error 404</h3>
-                        <form method="get" class="search-form">
+                        <form action="/" method="get" class="search-form">
                             <input type="search" name="s" placeholder="Lost something?">
-                            <button type="submit" name="submit" value="Search">Search</button>
+                            <button type="submit" value="Search">Search</button>
                         </form>
                     </div>
                     <!-- Popular Block -->

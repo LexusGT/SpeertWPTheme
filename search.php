@@ -28,15 +28,17 @@
 
                     <?php endwhile;?>
 
-                    <div class="loadmore"><a href="#">Load more</a></div>
+                    <div class="row">
+                        <?php get_template_part('inc/pagination'); ?>
+                    </div>
 
                 <?php else: ?>
 
                     <div class="search-page">
                         <h3>Sorry, there are no entries in this category</h3>
-                        <form method="get" class="search-form">
+                        <form action="/" method="get" class="search-form">
                             <input type="search" name="s" placeholder="Lost something?">
-                            <button type="submit" name="submit" value="Search">Search</button>
+                            <button type="submit" value="Search">Search</button>
                         </form>
                     </div>
                     <div class="row no-gutters align-items-center justify-content-between section-head">

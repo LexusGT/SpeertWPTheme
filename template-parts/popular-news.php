@@ -7,14 +7,20 @@
         <div class="row ">
 
             <?php
+            if ( is_front_page() )
+                $sizeThumb = 'm-m';
+            else
+                $sizeThumb = 'ss-ss';
+
             $args = array( 'numberposts' => 6, 'meta_key' => speert_get_type_sort_popular(), 'orderby' => 'meta_value_num', 'order' => 'DESC' );
             $myposts = get_posts( $args );
+
             foreach( $myposts as $post ){
                 setup_postdata($post);
                 ?>
                 <div <?php post_class('popular-item'); ?>>
                     <a href="<?php the_permalink();?>">
-                        <div class="popular-item-img" style="background-image: url(<?php echo get_the_post_thumbnail_url($post, 'ss-ss') ?>);"></div>
+                        <div class="popular-item-img" style="background-image: url(<?php echo get_the_post_thumbnail_url($post, $sizeThumb) ?>);"></div>
                     </a>
                     <div class="popular-item-head">
                         <a href="<?php the_permalink();?>"><?php the_title(); ?></a>

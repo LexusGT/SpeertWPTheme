@@ -6,16 +6,7 @@
                     <h5>About</h5>
                     <p><?php echo get_theme_mod('footer_about');?></p>
                     <div class="footer-social-links">
-                        <ul>
-                            <li><a href="#" class='footer-social-icon fb'></a></li>
-                            <li><a href="#" class='footer-social-icon gl'></a></li>
-                            <li><a href="#" class='footer-social-icon inst'></a></li>
-                            <li><a href="#" class='footer-social-icon ok'></a></li>
-                            <li><a href="#" class='footer-social-icon tg'></a></li>
-                            <li><a href="#" class='footer-social-icon tw'></a></li>
-                            <li><a href="#" class='footer-social-icon vk'></a></li>
-                            <li><a href="#" class='footer-social-icon yt'></a></li>
-                        </ul>
+                        <?php speert_social_network(); ?>
                     </div>
                 </div>
                 <div class="col-xs-6 col-lg-2 col-md-3">

@@ -13,7 +13,12 @@
                     <div class="slider-item">
 
                         <div class="slider-item-img">
-                            <?php the_post_thumbnail('thumb-big', array('itemprop'=>'image')); ?>
+                            <?php 
+                            $thumbnailSlider = get_the_post_thumbnail($post, 'thumb-big', array('itemprop'=>'image'));
+                            if ( empty($thumbnailSlider) )
+                                $thumbnailSlider = '<img src="'. speert_default_thumbnail() .'" class="attachment-thumb-big size-thumb-big wp-post-image no-thumbnail" alt='. get_the_title() .'" itemprop="image">';
+                            echo $thumbnailSlider;
+                            ?>
                         </div>
 
                         <div class="slider-item-text">
@@ -37,8 +42,14 @@
                 <div class="col-lg-4 hot-news">
 
                     <?php foreach ($posts_slider_right as $post) { setup_postdata($post); ?>
+                    <?
+                    $style = '';
+                    $thumbUrl = get_the_post_thumbnail_url($post, 's-m');
+                    if ( !empty($thumbUrl) )
+                        $style = 'style="background-image: url('. $thumbUrl .');"';
+                    ?>
                     <div class="hot-news-item">
-                        <div class="hot-news-item-img" style="background-image: url(<?php echo get_the_post_thumbnail_url($post, 's-m') ?>);"></div>
+                        <div class="hot-news-item-img" <?php echo $style; ?>></div>
                         <div class="hot-news-item-wrap">
                             <a class="hot-news-item-head" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                             <div class="hot-news-item-info"><?php echo speert_category( $post, '', '', null ); ?> / <?php echo get_the_date(); ?></div>

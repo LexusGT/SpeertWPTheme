@@ -45,4 +45,20 @@ function speert_the_next_post($post) {
 	$html .= '<div class="page-next-btn"><a href="'. $link .'">Next →</a></div>';
 	echo $html;
 }
+
+function speert_social_network() {
+	$html = '';
+
+	$sn = array('fb', 'gl', 'inst', 'ok', 'tg', 'tw', 'vk', 'yt');
+	foreach ($sn as $value) {
+		$url = get_field('social_' . $value, 'option');
+		if ( !empty($url) )
+			$html .= '<li><a rel="nofollow noopener" href="'. $url .'" target="_blank" class="footer-social-icon '.$value.'"></a></li>';
+	}
+
+	if ( !empty($html) )
+		$html = '<ul>'. $html .'</ul>';
+
+	echo $html;
+}
 ?>
