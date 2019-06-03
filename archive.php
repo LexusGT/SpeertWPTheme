@@ -24,8 +24,8 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-8 page-content-text">
-
+            <div class="col-lg-8">
+                <div class="page-content-text">
                 <?php if (have_posts()) : ?>
                     <?php 
                     while (have_posts()) : the_post(); 
@@ -34,7 +34,7 @@
 
                     endwhile; 
                     ?>
-
+                    </div>
                     <div class="row">
                         <?php get_template_part('inc/pagination'); ?>
                     </div>
@@ -65,6 +65,7 @@
                         wp_reset_postdata();
                         ?>
 
+                    </div>
                     </div>
 
                 <?php endif;?>

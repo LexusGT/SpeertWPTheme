@@ -61,8 +61,8 @@ function speert_register_required_plugins() {
 
 		// This is an example of how to include a plugin from the WordPress Plugin Repository.
 		array(
-			'name'      => 'Advanced Custom Fields',
-			'slug'      => 'advanced-custom-fields',
+			'name'      => 'Advanced Custom Fields PRO',
+			'slug'      => 'advanced-custom-fields-pro',
 			'required'  => true,
 		),
 	);
