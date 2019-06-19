@@ -4,15 +4,10 @@
 <section class="page-head">
     <div class="container">
         <div class="row">
-            <div class="col-md-12 col-lg-1 page-head-share">
-                <?php speert_share_btn(); ?>
-            </div>
-            <div class="col-md-12 col-lg-9 page-head-center">
-                <h1><?php the_title(); ?></h1>
+            <div class="col-12 page-head-center">
+                <h1 class="mod"><?php the_title(); ?></h1>
                 <?php speert_the_excerpt($post); ?>
-                <div class="page-more"><?php speert_meta($post); ?></div>
             </div>
-            <div class="col-md-3 col-lg-2 page-next"><?php speert_the_next_post($post); ?></div>
         </div>
     </div>
 </section>
@@ -23,39 +18,43 @@
             $attr = array('class' => "page-content-thumb");
             if ( has_post_thumbnail() )
                 the_post_thumbnail( 'full', $attr );
-            else
-                echo '<div class="page-head-line"></div>';
             ?>
             <?php
             $caption = get_the_post_thumbnail_caption();
             if ( !empty($caption) )
                 echo '<div class="page-content-thumb-desc">'. $caption .'</div>';
-            else 
-                echo '<div class="page-content-thumb-pd"></div>';
             ?>
         </div>
         <div class="row">
-            <div class="col-lg-8 page-content-text">
+            <div class="col-lg-8 offset-lg-2 page-content-text">
 
-                <?php the_content(); ?>
-
-                <div class="page-content-bottom">
-                    <div class="page-more"><?php speert_meta($post); ?></div>
-                    <div class="page-bot-share">
-                        <?php speert_share_btn(); ?>
+                <!-- <?php the_content(); ?> -->
+                <div class="adress-wrap">
+                    <div class="adress-item">
+                        <div class="adress-icon adress-icon-phone"></div>
+                        <h4>Phone:</h4>
+                        <p><a href="tel:+12345678910">+ 1 (234) 56 - 789 - 10</a></p>
+                    </div>
+                    <div class="adress-item">
+                    <div class="adress-icon adress-icon-adress"></div>
+                        <h4>Adress:</h4>
+                        <p>Los Angeles, St. Avenue, La 2540</p>
+                    </div>
+                    <div class="adress-item">
+                        <div class="adress-icon adress-icon-email"></div>
+                        <h4>E-mail:</h4>
+                        <p><a href="mailto:info@speertwp.com">info@speertwp.com</a></p>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 rightbar">
-                <?php get_sidebar(); ?>
+                <div class="adress-form">
+                 <?php
+                    echo do_shortcode ('[contact-form-7 id="194" title="contact form"]')
+                 ?>
+                </div>
+
             </div>
         </div>
     </div>
 </section>
-<!-- Start Comments -->
-<?php comments_template(); ?>
-<!-- End Comments -->
-<!-- Start Popular -->
-<?php get_template_part('template-parts/popular-news') ?>
-<!-- End Popular -->
+
 <?php get_footer(); ?>

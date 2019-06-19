@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="35" height="24.5" viewBox="0 0 35 24.5">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #0c191e;
+      }
+    </style>
+  </defs>
+  <g id="mail-icon" transform="translate(-2640 -1280.25)">
+    <g id="Group_16" data-name="Group 16">
+      <path id="Path_18" data-name="Path 18" class="cls-1" d="M2673.25,1280.25h-31.5A1.751,1.751,0,0,0,2640,1282v21a1.751,1.751,0,0,0,1.75,1.75h31.5A1.751,1.751,0,0,0,2675,1303v-21A1.751,1.751,0,0,0,2673.25,1280.25Zm-1.577,1.75-14.173,9.449L2643.327,1282Zm-29.923,21v-19.948l15.265,10.176a.874.874,0,0,0,.97,0l15.265-10.176V1303Z"/>
+    </g>
+    <g id="Group_17" data-name="Group 17">
+      <path id="Path_19" data-name="Path 19" class="cls-1" d="M2653.515,1293.522l-10.5,7a.875.875,0,1,0,.97,1.456l10.5-7a.875.875,0,0,0-.97-1.456Z"/>
+    </g>
+    <g id="Group_18" data-name="Group 18">
+      <path id="Path_20" data-name="Path 20" class="cls-1" d="M2661.485,1293.522a.875.875,0,0,0-.97,1.456l10.5,7a.875.875,0,0,0,.97-1.456Z"/>
+    </g>
+  </g>
+</svg>

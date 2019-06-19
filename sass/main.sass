@@ -924,6 +924,10 @@ body.no_scroll
 			color: $dark
 			height: 100px
 			overflow: hidden
+			&.mod
+				text-align: center
+				&:after
+					margin: 25px auto 0
 			&:after
 				content: ''
 				display: block
@@ -1252,6 +1256,74 @@ figure
 	float: left
 	margin: 10px 30px 0 0
 // End Page
+
+// Start Page Content Block
+.adress
+	&-wrap
+		display: flex
+		justify-content: space-between
+		margin-bottom: 32px
+		padding: 32px 0
+		border-bottom: 2px solid #f7f7f7
+	&-item
+		flex-shrink: 0
+		text-align: center
+	&-icon
+		display: inline-block
+		width: 35px
+		height: 35px
+		background-position: center bottom
+		background-repeat: no-repeat
+		margin: 8px 0
+		&-phone
+			background-image: url(../img/phone-icon.svg)
+		&-adress
+			background-image: url(../img/adress-icon.svg)
+		&-email
+			background-image: url(../img/email-icon.svg)
+	&-form
+		h3
+			text-align: center
+		input[type=text], input[type=email]
+			width: 100%
+			font-size: 15px
+			height: 46px
+			border: 1px solid #f6ece1
+			padding: 0 20px
+			flex: 1 1 auto
+			-webkit-appearance: none
+			&.wpcf7-not-valid
+				border-color: $accent
+		.input-name, .input-mail
+			display: inline-block
+			margin: 8px
+			width: calc(50% - 16px)
+		textarea
+			font-size: 15px
+			border: 1px solid #f6ece1
+			padding: 12px 20px
+			flex: 1 1 auto
+			width: calc(100% - 16px)
+			margin: 8px
+			resize: none
+			&.wpcf7-not-valid
+				border-color: $accent
+		input[type=submit]
+			display: block
+			margin: 20px auto
+			padding: 0 20px
+			background-color: $accent
+			border: 0
+			color: #fff
+			height: 46px
+			border-radius: 3px
+			cursor: pointer
+		.wpcf7-not-valid-tip
+			display: none
+.wpcf7-validates-as-required.wpcf7-not-valid
+	color: $accent
+
+// End Page Content Block
 
 // Start Pagination
 .pagination
