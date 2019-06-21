@@ -703,6 +703,8 @@ body.no_scroll
 				font-size: 18px
 				line-height: 28px
 				margin: 7px 0
+				height: 84px
+				overflow: hidden
 				a
 					color: $dark
 					&:hover
@@ -904,6 +906,8 @@ body.no_scroll
 .page
 	&-head
 		margin: 50px 0 25px
+		&.mod
+			margin: 50px 0 0
 		&-line
 			border-bottom: 2px dashed #f7f7f7
 			padding-top: 10px
@@ -1003,6 +1007,8 @@ body.no_scroll
 			font-size: 15px
 			line-height: 24px
 			color: $text
+			&.mod
+				margin-bottom: 24px
 			h2
 				font-size: 28px
 				line-height: 36px
@@ -1268,6 +1274,7 @@ figure
 	&-item
 		flex-shrink: 0
 		text-align: center
+		width: 33.33%
 	&-icon
 		display: inline-block
 		width: 35px
@@ -1312,12 +1319,14 @@ figure
 			display: block
 			margin: 20px auto
 			padding: 0 20px
-			background-color: $accent
+			background-color: $blue
 			border: 0
 			color: #fff
 			height: 46px
 			border-radius: 3px
 			cursor: pointer
+			&:hover
+				background-color: $accent
 		.wpcf7-not-valid-tip
 			display: none
 .wpcf7-validates-as-required.wpcf7-not-valid
@@ -1573,6 +1582,42 @@ figure
 	&:hover
 		background-color: $blue
 // End Comments
+
+// Start Scroll Top
+.scrollTop
+	display: none
+	z-index: 9999
+	position: fixed
+	bottom: 12px
+	right: 12px
+	width: 48px
+	height: 48px
+	border-radius: 50%
+	background-color: $accent
+	&:after
+		content: ''
+		display: block
+		width: 14px
+		height: 2px
+		transform: rotateZ(45deg)
+		background-color: #fff
+		position: absolute
+		top: 22px
+		left: 22px
+	&:before
+		content: ''
+		display: block
+		width: 14px
+		height: 2px
+		transform: rotateZ(-45deg)
+		background-color: #fff
+		position: absolute
+		top: 22px
+		left: 12px
+
+	&:hover
+		background-color: lighten($dark, 20%)
+// End Scroll Top
 
 //Start footer
 footer

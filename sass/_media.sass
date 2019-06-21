@@ -169,7 +169,7 @@
 			&:nth-child(6n+5)
 				float: left
 	.page
-		&-head
+		&-head, &-head.mod
 			margin-top: 80px
 			h1
 				height: auto
@@ -447,6 +447,8 @@
 	.adress
 		&-wrap
 			flex-direction: column
+		&-item
+			width: 100%
 		&-form
 			.input-name, .input-mail
 				width: calc(100% - 16px)
