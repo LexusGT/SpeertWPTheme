@@ -5,15 +5,19 @@
     ?>
 
     <?php if ( empty($titleBlock) || empty($postsBlock) ) : ?>
-        <div class="row no-gutters">
-            <h2>не выбран заголовок и/или посты</h2>
-        </div>
+    <div class="row no-gutters">
+        <h2>не выбран заголовок и/или посты</h2>
+    </div>
     <?php else : ?> 
         <div class="row no-gutters align-items-center justify-content-between section-head">
             <div class="section-head-left">
                 <h2><?php echo $titleBlock; ?></h2>
             </div>
-            <div class="section-head-right"><a href="#">Show more</a></div>
+            <?
+            $pageArchive = get_option('speert_page_latest');
+            if ( !empty($pageArchive) )
+                echo '<div class="section-head-right"><a href="'. get_page_link($pageArchive) .'">Show more</a></div>'; 
+            ?>
         </div>
         <div class="row no-gutters">
             <div class="archive float-md-left">
@@ -49,7 +53,10 @@
                 
                 <!-- .archive-item -->
                 <div class="clear"></div>
-                <div class="loadmore"><a href="#">Load more</a></div>
+                <?
+                if ( !empty($pageArchive) )
+                    echo '<div class="loadmore"><a href="'. get_page_link($pageArchive) .'">Load more</a></div>'; 
+                ?>
             </div><!-- /.archive -->
         </div><!-- /.row -->
     <?php endif; ?>

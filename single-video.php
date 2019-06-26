@@ -24,7 +24,7 @@
             <div class="col-lg-8 offset-lg-2">
                 <p>
                     <div style="padding:56.25% 0 0 0;position:relative;">
-                        <iframe src="<?php the_field('url_video'); ?>" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                        <iframe src="<?php echo speert_url_video($post->ID); ?>" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                     </div>
                 </p>
             </div>

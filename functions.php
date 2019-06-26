@@ -46,6 +46,70 @@ require get_template_directory() . '/inc/comments.php';
 require get_template_directory() . '/inc/edit_buttons/buttons.php';
 
 
+// Активация темы
+add_action( 'after_switch_theme', 'speert_insert_default_page' );
+function speert_insert_default_page() {
+	$new_pages = array();
+
+ 	// создание страницы: Latest Articles
+	$new_pages[0]['title'] = 'Latest Articles';
+	$new_pages[0]['content'] = 'Description this page';
+	$new_pages[0]['template'] = 'template-archive-latest.php';
+	$new_pages[0]['option'] = 'speert_page_latest';
+
+ 	// создание страницы: Popular news
+	$new_pages[1]['title'] = 'Popular news';
+	$new_pages[1]['content'] = 'Description this page';
+	$new_pages[1]['template'] = 'template-archive-popular.php';
+	$new_pages[1]['option'] = 'speert_page_popular';
+
+ 	// создание страницы: Contact
+	$new_pages[2]['title'] = 'Contact';
+	$new_pages[2]['content'] = '<div class="adress-wrap">
+	<div class="adress-item">
+	<div class="adress-icon adress-icon-phone"> </div>
+	<h4>Phone:</h4>
+	<p><a href="tel:+12345678910">+ 1 (234) 56 - 789 - 10</a></p>
+	</div>
+	<div class="adress-item">
+	<div class="adress-icon adress-icon-adress"> </div>
+	<h4>Address:</h4>
+	<p>Los Angeles, St. Avenue, La 2540</p>
+	</div>
+	<div class="adress-item">
+	<div class="adress-icon adress-icon-email"> </div>
+	<h4>E-mail:</h4>
+	<p><a href="mailto:info@speertwp.com">info@speertwp.com</a></p>
+	</div>
+	</div>
+	<div class="adress-form">[contact-form-7 id="194" title="contact form"]</div>';
+	$new_pages[2]['template'] = '';
+	$new_pages[2]['option'] = '';
+
+	foreach ($new_pages as $page) {
+
+		$page_check = get_page_by_title($page['title']);
+		$new_page = array(
+			'post_type' => 'page',
+			'post_title' => $page['title'],
+			'post_content' => $page['content'],
+			'post_status' => 'publish',
+			'post_author' => 1,
+		);
+		if( !isset($page_check->ID) ){
+			$new_page_id = wp_insert_post($new_page);
+			if( !empty($page['template']) ) {
+				update_post_meta($new_page_id, '_wp_page_template', $page['template']);
+			}
+			if( !empty($page['option']) ) {
+				update_option($page['option'], $new_page_id);
+			}
+		}
+
+	}
+
+}
+
 // Setup theme
 function speert_setup() {
 	load_theme_textdomain( 'lng_speert' ); // localization
@@ -63,10 +127,8 @@ function speert_setup() {
      * Add new image size
      */
 	$thumb_big_sizes  = apply_filters( 'speert_thumb_big_sizes', array( 747, 480, true ) );
-    // $thumb_wide_sizes = apply_filters( 'speert_thumb_wide_sizes', array( 330, 140, true ) );
 	if ( function_exists( 'add_image_size' ) ) {
 		add_image_size( 'thumb-big', $thumb_big_sizes[0], $thumb_big_sizes[1], $thumb_big_sizes[2]);
-        // add_image_size( 'thumb-wide', $thumb_wide_sizes[0], $thumb_wide_sizes[1], $thumb_wide_sizes[2] );
 	}
 
 	//Включает поддержку html5
@@ -146,14 +208,14 @@ add_filter('intermediate_image_sizes_advanced', 'speert_remove_image_sizes');
 add_action( 'wp_enqueue_scripts', 'speert_name_scripts' );
 function speert_name_scripts() {
 	wp_enqueue_style( 'style-main', get_stylesheet_uri() );
-	wp_enqueue_style( 'style-min', get_stylesheet_directory_uri().'/css/main.min.css' );
-	wp_enqueue_style( 'slick', get_stylesheet_directory_uri().'/libs/slick/slick.css' );
-	wp_enqueue_style( 'slick-theme', get_stylesheet_directory_uri().'/libs/slick/slick-theme.css' );
+	wp_enqueue_style( 'style-min', get_template_directory_uri().'/css/main.min.css' );
+	wp_enqueue_style( 'slick', get_template_directory_uri().'/libs/slick/slick.css' );
+	wp_enqueue_style( 'slick-theme', get_template_directory_uri().'/libs/slick/slick-theme.css' );
 	wp_enqueue_script( 'script-min', get_template_directory_uri() . '/js/scripts.min.js', array(), false, true );
 	wp_enqueue_script( 'slick', get_template_directory_uri() . '/libs/slick/slick.min.js', array(), false, true );
 	wp_localize_script( 'script-min', 'speert_ajax', array('url' => admin_url('admin-ajax.php')) ); 
 }
-	
+
 
 // Настройка отрывка поста: кол-во выводимых слов
 function new_excerpt_length($length) {
@@ -220,13 +282,23 @@ function speert_comment_form_default_add_fields( $fields ) {
 }
 
 function speert_pre_get_posts( $query ) {
-    if ( !is_admin() && $query->is_main_query() && $query->is_post_type_archive(array('video','photo')) ) {
-        $query->set( 'posts_per_page', 8 );
-    }
+	if ( !is_admin() && $query->is_main_query() && $query->is_post_type_archive(array('video','photo')) ) {
+		$query->set( 'posts_per_page', 8 );
+	}
 }
 add_action( 'pre_get_posts', 'speert_pre_get_posts' );
 
 function speert_default_thumbnail() {
 	return get_template_directory_uri() . '/img/no_photo.jpg';
+}
+
+function speert_url_video($post_id) {
+	$url = get_field('url_video', $post_id);
+	if ( stripos($url, 'embed') === false ) :
+		preg_match("#(?<=v=)[a-zA-Z0-9-]+(?=&)|(?<=v\/)[^&\n]+(?=\?)|(?<=v=)[^&\n]+|(?<=youtu.be/)[^&\n]+#", $url, $matches);
+		$url = 'https://youtube.com/embed/' . $matches[0];
+	endif;
+
+	return $url;
 }
 ?>

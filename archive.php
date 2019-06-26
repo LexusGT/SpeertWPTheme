@@ -26,46 +26,46 @@
         <div class="row">
             <div class="col-lg-8">
                 <div class="page-content-text">
-                <?php if (have_posts()) : ?>
-                    <?php 
-                    while (have_posts()) : the_post(); 
+                    <?php if (have_posts()) : ?>
+                        <?php 
+                        while (have_posts()) : the_post(); 
 
-                        get_template_part('template-parts/archive-post-one');
+                            get_template_part('template-parts/archive-post-one');
 
-                    endwhile; 
-                    ?>
+                        endwhile; 
+                        ?>
                     </div>
                     <div class="row">
                         <?php get_template_part('inc/pagination'); ?>
                     </div>
 
-                <?php else: ?>
+                    <?php else: ?>
 
-                    <div class="search-page">
-                        <h3>Sorry, there are no entries in this category</h3>
-                        <form action="/" method="get" class="search-form">
-                            <input type="search" name="s" placeholder="Lost something?">
-                            <button type="submit" value="Search">Search</button>
-                        </form>
-                    </div>
-                    <div class="row no-gutters align-items-center justify-content-between section-head">
-                        <div class="section-head-left">
-                            <h2 class="exempt">Popular news</h2>
+                        <div class="search-page">
+                            <h3>Sorry, there are no entries in this category</h3>
+                            <form action="/" method="get" class="search-form">
+                                <input type="search" name="s" placeholder="Lost something?">
+                                <button type="submit" value="Search">Search</button>
+                            </form>
                         </div>
-                    </div>
-                    <div class="row no-gutters">
+                        <div class="row no-gutters align-items-center justify-content-between section-head">
+                            <div class="section-head-left">
+                                <h2 class="exempt">Popular news</h2>
+                            </div>
+                        </div>
+                        <div class="row no-gutters">
 
-                        <?php
-                        $args = array( 'numberposts' => 3 );
-                        $myposts = get_posts( $args );
-                        foreach( $myposts as $post ){
-                            setup_postdata($post);
-                            get_template_part('template-parts/archive-post-one');
-                        }
-                        wp_reset_postdata();
-                        ?>
+                            <?php
+                            $args = array( 'numberposts' => 3 );
+                            $myposts = get_posts( $args );
+                            foreach( $myposts as $post ){
+                                setup_postdata($post);
+                                get_template_part('template-parts/archive-post-one');
+                            }
+                            wp_reset_postdata();
+                            ?>
 
-                    </div>
+                        </div>
                     </div>
 
                 <?php endif;?>

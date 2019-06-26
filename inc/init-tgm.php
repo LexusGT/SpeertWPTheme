@@ -63,6 +63,23 @@ function speert_register_required_plugins() {
 		array(
 			'name'      => 'Advanced Custom Fields PRO',
 			'slug'      => 'advanced-custom-fields-pro',
+			'source'    => 'https://github.com/wp-premium/advanced-custom-fields-pro/archive/master.zip',
+			'required'  => true,
+		),
+		array(
+			'name'      => 'Custom Feeds for Instagram',
+			'slug'      => 'instagram-feed',
+			'required'  => false,
+		),
+		array(
+			'name'      => 'Contact Form 7',
+			'slug'      => 'contact-form-7',
+			'required'  => true,
+		),
+		array(
+			'name'      => 'Envato Market',
+			'slug'      => 'envato-market',
+			'source'    => 'https://envato.github.io/wp-envato-market/dist/envato-market.zip',
 			'required'  => true,
 		),
 	);

@@ -27,9 +27,13 @@
                 <?php speert_list_menu('footer_quick_links', 'Quick Links'); ?>
                 <?php speert_list_menu('footer_information', 'Information'); ?>
 
-                <div class="col-xs-6 col-lg-2 col-md-3">
-                    <h5>Instagram</h5>
-                </div>
+                <?php if(shortcode_exists('instagram-feed')) : ?>
+                    <div class="col-xs-6 col-lg-2 col-md-3">
+                        <h5>Instagram</h5>
+                        <?php echo do_shortcode('[instagram-feed num=6 cols=3 showheader=false showbio=false]'); ?>
+                    </div>
+                <?php endif; ?>
+
                 <div class="row align-items-center footer-bottom">
                     <div class="col-md-auto header-logotype">
                         <img src="<? echo get_bloginfo('template_url'); ?>/img/logotype-speert-theme.svg" alt="">
