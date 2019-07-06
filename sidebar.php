@@ -1,7 +1,7 @@
 <?php speert_banner_right_sidebar(); ?>
 
 <div class="rightbar-popular">
-    <h4>The most <strong>popular</strong></h4>
+    <h4><?php _e('The most '); ?><strong><?php _e('popular'); ?></strong></h4>
 
     <?php
     $args = array( 'numberposts' => 4, 'meta_key' => speert_get_type_sort_popular(), 'orderby' => 'meta_value_num', 'order' => 'DESC' );

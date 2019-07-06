@@ -37,7 +37,7 @@
             <div class="container">
                 <form action="/" class="search-form">
                     <input type="search" name="s" placeholder="Lost something?">
-                    <button type="submit" name="submit" value="Search">Search</button>
+                    <button type="submit" name="submit" value="Search"><?php _e('Search'); ?></button>
                 </form>
             </div>
         </div>

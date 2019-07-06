@@ -42,7 +42,7 @@ function speert_the_next_post($post) {
 
 	$html = '<a href="'. $link .'" class="page-next-img" style="background-image: url('. $thumb .')"></a>';
 	$html .= '<div class="page-next-link"><a href="'. $link .'">'. $title .'</a></div>';
-	$html .= '<div class="page-next-btn"><a href="'. $link .'">Next →</a></div>';
+	$html .= '<div class="page-next-btn"><a href="'. $link .'">'. __('Next').' →</a></div>';
 	echo $html;
 }
 

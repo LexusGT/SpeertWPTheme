@@ -4,13 +4,13 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 page-head-center">
-                <h1><?php printf( esc_html__( 'Results for: %s'), '<span>' . get_search_query() . '</span>' ); ?></h1>
+                <h1><?php printf( esc_html__( __('Results for:') . ' %s'), '<span>' . get_search_query() . '</span>' ); ?></h1>
                 <div class="page-more">
                     <div class="page-content-crumb">
-                        <a href="<?php echo home_url(); ?>">Main page</a>
+                        <a href="<?php echo home_url(); ?>"><?php _e('Main page'); ?></a>
                     </div>
                     <?php global $wp_query; ?>
-                    <div class="page-content-articles"><?php echo $wp_query->found_posts; ?> results found</div>
+                    <div class="page-content-articles"><?php echo $wp_query->found_posts; ?> <?php _e('results found'); ?></div>
                 </div>
             </div>
         </div>
@@ -35,15 +35,15 @@
                 <?php else: ?>
 
                     <div class="search-page">
-                        <h3>Sorry, there are no entries in this category</h3>
+                        <h3><?php _e('Sorry, there are no entries in this category'); ?></h3>
                         <form action="/" method="get" class="search-form">
                             <input type="search" name="s" placeholder="Lost something?">
-                            <button type="submit" value="Search">Search</button>
+                            <button type="submit" value="Search"><?php _e('Search'); ?></button>
                         </form>
                     </div>
                     <div class="row no-gutters align-items-center justify-content-between section-head">
                         <div class="section-head-left">
-                            <h2 class="exempt">Popular news</h2>
+                            <h2 class="exempt"><?php _e('Popular news'); ?></h2>
                         </div>
                     </div>
                     <div class="row no-gutters">

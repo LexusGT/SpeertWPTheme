@@ -55,7 +55,7 @@ function speert_get_count_posts_archive($taxonomy) {
 function speert_the_count_posts_archive($taxonomy) {
 	$count = speert_get_count_posts_archive($taxonomy);
 	$text = $count > 1 ? 'Arcticles' : 'Arcticle';
-	echo $count . ' ' . $text;
+	echo $count . ' ' . __($text);
 }
 
 function speert_meta($post) {

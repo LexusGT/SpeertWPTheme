@@ -3,20 +3,23 @@
 add_action('init', 'speert_register_post_type');
 function speert_register_post_type() {
 
+	$namePhoto = __('Photo');
+	$namephoto = __('photo');
+
 	register_post_type('photo', array(
 		'labels'             => array(
-			'name'               => 'Фото',
-			'singular_name'      => 'Фото',
+			'name'               => $namePhoto,
+			'singular_name'      => $namePhoto,
 			'add_new'            => 'Добавить новое',
-			'add_new_item'       => 'Добавить новое фото',
-			'edit_item'          => 'Редактировать фото',
-			'new_item'           => 'Новое фото',
-			'view_item'          => 'Посмотреть фото',
-			'search_items'       => 'Найти фото',
-			'not_found'          => 'Фото не найдено',
-			'not_found_in_trash' => 'В корзине фото не найдено',
+			'add_new_item'       => 'Добавить новое '. $namephoto,
+			'edit_item'          => 'Редактировать '. $namephoto,
+			'new_item'           => 'Новое '. $namephoto,
+			'view_item'          => 'Посмотреть '. $namephoto,
+			'search_items'       => 'Найти '. $namephoto,
+			'not_found'          => $namePhoto.' не найдено',
+			'not_found_in_trash' => 'В корзине '. $namephoto .' не найдено',
 			'parent_item_colon'  => '',
-			'menu_name'          => 'Фото'
+			'menu_name'          => $namePhoto
 
 		  ),
 		'public'             => true,
@@ -34,20 +37,24 @@ function speert_register_post_type() {
 		'supports'           => array('title','editor','author','thumbnail','comments')
 	) );
 
+
+	$nameVideo = __('Video');
+	$namevideo = __('video');
+
 	register_post_type('video', array(
 		'labels'             => array(
-			'name'               => 'Видео',
-			'singular_name'      => 'Видео',
+			'name'               => $nameVideo,
+			'singular_name'      => $nameVideo,
 			'add_new'            => 'Добавить новое',
-			'add_new_item'       => 'Добавить новое видео',
-			'edit_item'          => 'Редактировать видео',
-			'new_item'           => 'Новое видео',
-			'view_item'          => 'Посмотреть видео',
-			'search_items'       => 'Найти видео',
-			'not_found'          => 'Видео не найдено',
-			'not_found_in_trash' => 'В корзине видео не найдено',
+			'add_new_item'       => 'Добавить новое '. $namevideo,
+			'edit_item'          => 'Редактировать '. $namevideo,
+			'new_item'           => 'Новое '. $namevideo,
+			'view_item'          => 'Посмотреть '. $namevideo,
+			'search_items'       => 'Найти '. $namevideo,
+			'not_found'          => $nameVideo .' не найдено',
+			'not_found_in_trash' => 'В корзине '. $namevideo .' не найдено',
 			'parent_item_colon'  => '',
-			'menu_name'          => 'Видео'
+			'menu_name'          => $nameVideo
 
 		  ),
 		'public'             => true,

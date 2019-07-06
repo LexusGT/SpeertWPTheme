@@ -6,9 +6,9 @@
     <section class="container gutter">
         <div class="row no-gutters align-items-center justify-content-between section-head">
             <div class="section-head-left">
-                <h2>Gallery</h2>
+                <h2><?php _e('Gallery'); ?></h2>
             </div>
-            <div class="section-head-right"><a href="<?php echo get_post_type_archive_link('photo'); ?>">Show more</a></div>
+            <div class="section-head-right"><a href="<?php echo get_post_type_archive_link('photo'); ?>"><?php _e('Show more'); ?></a></div>
         </div>
         <div class="no-gutters gallery-wrap">
 
@@ -28,7 +28,7 @@
             <div class="clear"></div>
         </div>
         <div class="row">
-            <a href="#" class="btn_showmore">Show more</a>
+            <a href="#" class="btn_showmore"><?php _e('Show more'); ?></a>
         </div>
     </section>
 

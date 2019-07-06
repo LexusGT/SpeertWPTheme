@@ -9,7 +9,7 @@
                 <div class="page-desc"><?php speert_the_excerpt($post); ?></div>
                 <div class="page-more">
                     <div class="page-content-crumb">
-                        <a href="<?php echo get_post_type_archive_link('photo'); ?>">Images</a>
+                        <a href="<?php echo get_post_type_archive_link('photo'); ?>"><?php _e('Images'); ?></a>
                     </div>
                     <div class="page-content-author">
                         <?php echo get_the_author(); ?>

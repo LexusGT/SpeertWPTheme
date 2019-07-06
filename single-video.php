@@ -9,7 +9,7 @@
                 <div class="page-desc"><?php speert_the_excerpt($post); ?></div>
                 <div class="page-more">
                     <div class="page-content-crumb">
-                        <a href="<?php echo get_post_type_archive_link('video'); ?>">Videos</a>
+                        <a href="<?php echo get_post_type_archive_link('video'); ?>"><?php _e('Videos'); ?></a>
                     </div>
                     <div class="page-content-author">
                         <?php echo get_the_author(); ?>

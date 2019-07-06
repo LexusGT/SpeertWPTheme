@@ -45,10 +45,10 @@
                     <?php else: ?>
 
                         <div class="search-page">
-                            <h3>Sorry, there are no entries in this category</h3>
+                            <h3><?php _e('Sorry, there are no entries in this category'); ?></h3>
                             <form action="/" method="get" class="search-form">
                                 <input type="search" name="s" placeholder="Lost something?">
-                                <button type="submit" value="Search">Search</button>
+                                <button type="submit" value="Search"><?php _e('Search'); ?></button>
                             </form>
                         </div>
                     </div>

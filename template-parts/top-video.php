@@ -5,9 +5,9 @@
     <section class="container gutter">
         <div class="row no-gutters align-items-center justify-content-between section-head">
             <div class="section-head-left">
-                <h2>Top video</h2>
+                <h2><?php _e('Top video'); ?></h2>
             </div>
-            <div class="section-head-right"><a href="<?php echo get_post_type_archive_link('video'); ?>">Show more</a></div>
+            <div class="section-head-right"><a href="<?php echo get_post_type_archive_link('video'); ?>"><?php _e('Show more'); ?></a></div>
         </div>
         <div class="row video">
 
@@ -26,7 +26,7 @@
             </div>
             <?php } ?>
 
-            <a href="#" class="btn_showmore">Show more</a>
+            <a href="#" class="btn_showmore"><?php _e('Show more'); ?></a>
         </div>
     </section>
 

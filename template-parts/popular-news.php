@@ -1,12 +1,12 @@
 <section class="container gutter">
     <div class="row no-gutters align-items-center justify-content-between section-head">
         <div class="section-head-left">
-            <h2>Popular news</h2>
+            <h2><?php _e('Popular news'); ?></h2>
         </div>
         <?
         $pagePopular = get_option('speert_page_popular');
         if ( !empty($pagePopular) )
-            echo '<div class="section-head-right"><a href="'. get_page_link($pagePopular) .'">Show more</a></div>'; 
+            echo '<div class="section-head-right"><a href="'. get_page_link($pagePopular) .'">'. __('Show more') .'</a></div>'; 
         ?>
     </div>
     
@@ -41,7 +41,7 @@
 
         <?
         if ( !empty($pagePopular) )
-            echo '<a href="'. get_page_link($pagePopular) .'" class="btn_showmore">Show more</a>'; 
+            echo '<a href="'. get_page_link($pagePopular) .'" class="btn_showmore">'. __('Show more') .'</a>'; 
         ?>
     </div>
 </section>

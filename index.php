@@ -32,7 +32,7 @@
 
                 </div>
                 <? else : ?>
-                    Посты не выбраны в админке
+                    <?php _e('Select posts in admin panel'); ?>
                 <?php endif; ?>
 
                 <?php $posts_slider_right = get_field( "posts_home_right_slider", "option" ); ?>
@@ -58,7 +58,7 @@
 
                     </div>
                     <? else : ?>
-                        Посты не выбраны в админке
+                        <?php _e('Select posts in admin panel'); ?>
                     <?php endif; ?>
 
                     <?php $posts_bottom_slider = get_field( "posts_bottom_slider", "option" ); ?>
@@ -103,12 +103,12 @@
         <section class="container gutter">
             <div class="row no-gutters align-items-center justify-content-between section-head">
                 <div class="section-head-left">
-                    <h2>Latest Articles</h2>
+                    <h2><?php _e('Latest Articles'); ?></h2>
                 </div>
                 <?
                 $pageArchive = get_option('speert_page_latest');
                 if ( !empty($pageArchive) )
-                    echo '<div class="section-head-right"><a href="'. get_page_link($pageArchive) .'">Show more</a></div>'; 
+                    echo '<div class="section-head-right"><a href="'. get_page_link($pageArchive) .'">'. __('Show more') .'</a></div>'; 
                 ?>
             </div>
             <div class="row">
@@ -125,7 +125,7 @@
 
                     <?
                     if ( !empty($pageArchive) )
-                        echo '<a href="'. get_page_link($pageArchive) .'" class="btn_showmore">Show more</a>'; 
+                        echo '<a href="'. get_page_link($pageArchive) .'" class="btn_showmore">'. __('Show more') .'</a>'; 
                     ?>
                 </div>
 

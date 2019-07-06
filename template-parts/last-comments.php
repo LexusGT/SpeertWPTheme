@@ -6,7 +6,7 @@
 	<section class="container gutter">
 		<div class="row no-gutters align-items-center justify-content-between section-head">
 			<div class="section-head-left">
-				<h2>Last comments</h2>
+				<h2><?php _e('Last comments'); ?></h2>
 			</div>
 		</div>
 		<div class="row ">
@@ -39,7 +39,7 @@
 							</div>
 						</div>
 						<div class="last-comments-item-wrap-text"><?php echo $comment->comment_content; ?></div>
-						<div class="last-comments-item-wrap-link"><a href="<?php comment_link( $comment ); ?>">Read comment</a></div>
+						<div class="last-comments-item-wrap-link"><a href="<?php comment_link( $comment ); ?>"><?php _e('Read comment'); ?></a></div>
 					</div>
 				</div>
 			</div>

@@ -13,7 +13,7 @@
                 <?php if ( !empty($ancestors) ) : ?>
                     <div class="page-more">
                         <div class="page-content-crumb">
-                            <a href="<?php echo get_category_link( $ancestors[0] ); ?>">Category</a>
+                            <a href="<?php echo get_category_link( $ancestors[0] ); ?>"><?php _e('Category'); ?></a>
                         </div>
                         <div class="page-content-articles">
                             <?php speert_the_count_posts_archive('category'); ?>
@@ -42,15 +42,15 @@
                     <?php else: ?>
 
                         <div class="search-page">
-                            <h3>Sorry, there are no entries in this category</h3>
+                            <h3><?php _e('Sorry, there are no entries in this category'); ?></h3>
                             <form action="/" method="get" class="search-form">
                                 <input type="search" name="s" placeholder="Lost something?">
-                                <button type="submit" value="Search">Search</button>
+                                <button type="submit" value="Search"><?php _e('Search'); ?></button>
                             </form>
                         </div>
                         <div class="row no-gutters align-items-center justify-content-between section-head">
                             <div class="section-head-left">
-                                <h2 class="exempt">Popular news</h2>
+                                <h2 class="exempt"><?php _e('Popular news'); ?></h2>
                             </div>
                         </div>
                         <div class="row no-gutters">

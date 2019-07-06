@@ -6,7 +6,7 @@
 
     <?php if ( empty($titleBlock) || empty($postsBlock) ) : ?>
     <div class="row no-gutters">
-        <h2>не выбран заголовок и/или посты</h2>
+        <h2><?php _e('no title and / or posts selected'); ?></h2>
     </div>
     <?php else : ?> 
         <div class="row no-gutters align-items-center justify-content-between section-head">
@@ -16,7 +16,7 @@
             <?
             $pageArchive = get_option('speert_page_latest');
             if ( !empty($pageArchive) )
-                echo '<div class="section-head-right"><a href="'. get_page_link($pageArchive) .'">Show more</a></div>'; 
+                echo '<div class="section-head-right"><a href="'. get_page_link($pageArchive) .'">' __('Show more') .'</a></div>'; 
             ?>
         </div>
         <div class="row no-gutters">
@@ -41,7 +41,7 @@
                                 <div class="archive-item-wrap-date"><?php echo speert_category( $post, '', '', true ); ?> / <?php echo get_the_date(); ?></div>
                                 <div class="archive-item-wrap-head"><a href="<?php the_permalink();?>"><?php the_title(); ?></a></div>
                                 <div class="archive-item-wrap-text"><?php the_excerpt(); ?></div>
-                                <div class="archive-item-wrap-link"><a href="<?php the_permalink();?>">Continue reading</a></div>
+                                <div class="archive-item-wrap-link"><a href="<?php the_permalink();?>"><?php _e('Continue reading'); ?></a></div>
                             </div>
                         </div>
                     </div>
@@ -55,7 +55,7 @@
                 <div class="clear"></div>
                 <?
                 if ( !empty($pageArchive) )
-                    echo '<div class="loadmore"><a href="'. get_page_link($pageArchive) .'">Load more</a></div>'; 
+                    echo '<div class="loadmore"><a href="'. get_page_link($pageArchive) .'">'. __('Load more') .'</a></div>'; 
                 ?>
             </div><!-- /.archive -->
         </div><!-- /.row -->

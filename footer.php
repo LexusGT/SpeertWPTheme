@@ -3,14 +3,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-4">
-                    <h5>About</h5>
+                    <h5><?php _e('About'); ?></h5>
                     <p><?php echo get_theme_mod('footer_about');?></p>
                     <div class="footer-social-links">
                         <?php speert_social_network(); ?>
                     </div>
                 </div>
                 <div class="col-xs-6 col-lg-2 col-md-3">
-                    <h5>Categories</h5>
+                    <h5><?php _e('Categories'); ?></h5>
                     <ul class="footer-menu">
                         <?php
                         $categories = get_categories();
@@ -29,7 +29,7 @@
 
                 <?php if(shortcode_exists('instagram-feed')) : ?>
                     <div class="col-xs-6 col-lg-2 col-md-3">
-                        <h5>Instagram</h5>
+                        <h5><?php _e('Instagram'); ?></h5>
                         <?php echo do_shortcode('[instagram-feed num=6 cols=3 showheader=false showbio=false]'); ?>
                     </div>
                 <?php endif; ?>

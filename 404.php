@@ -4,10 +4,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 page-head-center">
-                    <h1>Oops! This page doesn`t exist.</h1>
+                    <h1><?php _e('Oops! This page doesn`t exist.'); ?></h1>
                     <div class="page-more">
                         <div class="page-content-crumb">
-                            <a href="<?php echo home_url(); ?>">Main page</a>
+                            <a href="<?php echo home_url(); ?>"><?php _e('Main page'); ?></a>
                         </div>
                     </div>
                 </div>
@@ -20,10 +20,10 @@
                 <div class="col-lg-12 page-content-text">
                     <div class="search-page center">
                         <img src="<?php bloginfo('template_directory'); ?>/img/404.svg" alt="Error 404" class="img404">
-                        <h3>Error 404</h3>
+                        <h3><?php _e('Error 404'); ?></h3>
                         <form action="/" method="get" class="search-form">
                             <input type="search" name="s" placeholder="Lost something?">
-                            <button type="submit" value="Search">Search</button>
+                            <button type="submit" value="Search"><?php _e('Search'); ?></button>
                         </form>
                     </div>
                     <!-- Popular Block -->
