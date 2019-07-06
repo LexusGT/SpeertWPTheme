@@ -19,7 +19,7 @@
 
             <div <?php post_class('col-md-6 video-cat-item'); ?>>
                 <div style="padding:56.25% 0 0 0;position:relative;" class="video-item-block">
-                    <iframe src="<?php the_field('url_video'); ?>" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    <iframe src="<?php echo speert_url_video($post->ID); ?>" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                 </div>
                 <a href="<?php the_permalink();?>" class="video-item-head"><?php the_title(); ?></a>
                 <div class="video-item-more align-items-center">
