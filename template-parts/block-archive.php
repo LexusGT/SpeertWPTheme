@@ -16,7 +16,7 @@
             <?
             $pageArchive = get_option('speert_page_latest');
             if ( !empty($pageArchive) )
-                echo '<div class="section-head-right"><a href="'. get_page_link($pageArchive) .'">' __('Show more') .'</a></div>'; 
+                echo '<div class="section-head-right"><a href="'. get_page_link($pageArchive) .'">'. __('Show more') .'</a></div>'; 
             ?>
         </div>
         <div class="row no-gutters">
