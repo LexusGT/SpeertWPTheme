@@ -12,8 +12,8 @@
                 ?>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-12 page-content-text">
+        <div class="row img-row">
+            <div class="col-lg-12">
 
                 <?php if( have_posts() ) : ?>
 
@@ -36,16 +36,12 @@
 
                         <div class="clear"></div>
                     </div>
-
-                    <div class="row">
-                        <?php get_template_part('inc/pagination'); ?>
-                    </div>
-
                 <?php endif; ?>
-
             </div>
         </div>
-
+        <div class="row">
+            <?php get_template_part('inc/pagination'); ?>
+        </div>
     </div>
 </section>
 
