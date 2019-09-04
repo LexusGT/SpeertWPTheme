@@ -15,19 +15,18 @@
             </div>
         </div>
     </div>
-</section>
-<section class="page-content">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 page-content-text">
-                <?php if (have_posts()) : ?>
+            <div class="col-lg-8">
+                    <div class="page-content-text">
+                        <?php if (have_posts()) : ?>
 
-                    <?php while (have_posts()) : the_post(); ?>
+                        <?php while (have_posts()) : the_post(); ?>
 
-                        <?php get_template_part('template-parts/archive-post-one'); ?>
+                            <?php get_template_part('template-parts/archive-post-one'); ?>
 
-                    <?php endwhile;?>
-
+                        <?php endwhile;?>
+                    </div>    
                     <div class="row">
                         <?php get_template_part('inc/pagination'); ?>
                     </div>
@@ -69,5 +68,6 @@
         </div>
     </div>
 </section>
+
 
 <?php get_footer(); ?>
